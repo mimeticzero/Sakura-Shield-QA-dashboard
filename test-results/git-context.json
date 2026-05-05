@@ -1,0 +1,7 @@
+{
+  "shortSha": "a4f3c21",
+  "sha":      "a4f3c21b9d8e0f5c3d7a1b4e2c6f9d0a3b5c8e1f",
+  "message":  "fix: advanceToArguments — replace rigid loop with 120-iter master loop",
+  "author":   "MimeticZero",
+  "date":     "2025-05-05T09:15:00.000Z"
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OWASP ZAP Security Report — Sakura Node</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Courier New', monospace; background: #030508; color: #e2e8f0; min-height: 100vh; padding: 40px clamp(16px, 4vw, 48px); }
+    .page { max-width: 1400px; margin: 0 auto; }
+
+    /* Header */
+    .header { text-align: center; border-bottom: 2px solid #9b30ff; padding-bottom: 28px; margin-bottom: 36px; }
+    .tag { font-size: 12px; letter-spacing: 5px; color: #9b30ff; opacity: 0.8; margin-bottom: 12px; }
+    h1 { font-size: clamp(18px, 3vw, 26px); letter-spacing: 4px; color: #fff; text-transform: uppercase; margin-bottom: 16px; }
+    .meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 12px; letter-spacing: 2px; color: #64748b; }
+    .meta span { color: #9b30ff; }
+
+    /* Lang toggle */
+    .lang-btn {
+      display: inline-block; margin-bottom: 20px; padding: 6px 18px;
+      font-size: 12px; letter-spacing: 3px; font-family: 'Courier New', monospace;
+      background: transparent; border: 1px solid #9b30ff44; color: #9b30ff;
+      cursor: pointer; border-radius: 2px;
+    }
+    .lang-btn:hover { background: rgba(155,48,255,0.1); }
+
+    /* Summary badges */
+    .summary-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .badge { flex: 1 1 140px; padding: 18px 20px; border-radius: 2px; border-top: 2px solid; text-align: center; }
+    .badge-label { font-size: 12px; letter-spacing: 3px; color: #64748b; margin-bottom: 8px; }
+    .badge-value { font-size: 36px; font-weight: 700; letter-spacing: 2px; }
+    .high   { border-color: #ff2d78; background: rgba(255,45,120,0.06); } .high   .badge-value { color: #ff2d78; }
+    .medium { border-color: #f59e0b; background: rgba(245,158,11,0.06); } .medium .badge-value { color: #f59e0b; }
+    .low    { border-color: #00f5ff; background: rgba(0,245,255,0.06);  } .low    .badge-value { color: #00f5ff; }
+    .info   { border-color: #9b30ff; background: rgba(155,48,255,0.06); } .info   .badge-value { color: #9b30ff; }
+
+    /* Sections */
+    section { background: rgba(0,0,0,0.5); border: 1px solid rgba(155,48,255,0.15); border-top: 2px solid #9b30ff; border-radius: 2px; padding: 24px; margin-bottom: 24px; overflow-x: auto; }
+    h2 { font-size: 12px; letter-spacing: 4px; color: #9b30ff; text-transform: uppercase; text-align: center; margin-bottom: 20px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 560px; table-layout: fixed; }
+    thead tr { border-bottom: 1px solid rgba(155,48,255,0.25); }
+    th { text-align: left; padding: 8px 14px; font-size: 12px; letter-spacing: 2px; color: #64748b; font-weight: 400; }
+    tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); }
+    td { padding: 12px 14px; vertical-align: top; line-height: 1.55; word-break: break-word; }
+    col.c-risk  { width: 110px; }
+    col.c-alert { width: 36%; }
+    col.c-info  { }
+    col.c-param { width: 220px; }
+    col.c-val   { }
+
+    /* Risk badges */
+    .risk { display: inline-block; white-space: nowrap; font-size: 12px; letter-spacing: 2px; padding: 4px 10px; border-radius: 2px; font-weight: 700; }
+    .risk-high   { color: #ff2d78; border: 1px solid rgba(255,45,120,0.4); }
+    .risk-medium { color: #f59e0b; border: 1px solid rgba(245,158,11,0.4); }
+    .risk-low    { color: #00f5ff; border: 1px solid rgba(0,245,255,0.4);  }
+
+    .desc     { color: #94a3b8; }
+    .solution { color: #64748b; font-size: 12px; margin-top: 6px; }
+    .url      { color: #64748b; font-size: 12px; margin-top: 4px; word-break: break-all; }
+
+    /* Config table centered */
+    .config-wrap { display: flex; justify-content: center; overflow-x: auto; }
+    .config-wrap table { width: auto; min-width: 0; table-layout: auto; }
+    .config-wrap td:first-child { padding-right: 48px; white-space: nowrap; }
+
+    /* Footer */
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; letter-spacing: 2px; color: #334155; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Lang toggle -->
+  <div style="text-align:right; margin-bottom: 8px;">
+    <button class="lang-btn" onclick="toggleLang()" id="lang-btn">FR</button>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="tag" data-en="SAKURA NODE · MIMETIC ZERO · SECURITY REPORT" data-fr="SAKURA NODE · MIMETIC ZERO · RAPPORT DE SÉCURITÉ">SAKURA NODE · MIMETIC ZERO · SECURITY REPORT</div>
+    <h1 data-en="OWASP ZAP — Automated Scan Report" data-fr="OWASP ZAP — Rapport de Scan Automatisé">OWASP ZAP — Automated Scan Report</h1>
+    <div class="meta">
+      <span data-en="TARGET: https://sakuranode.com" data-fr="CIBLE : https://sakuranode.com">TARGET: https://sakuranode.com</span>
+      <span data-en="DATE: 2025-05-05" data-fr="DATE : 2025-05-05">DATE: 2025-05-05</span>
+      <span data-en="TOOL: ZAP 2.15.0" data-fr="OUTIL : ZAP 2.15.0">TOOL: ZAP 2.15.0</span>
+      <span data-en="MODE: Passive + Active" data-fr="MODE : Passif + Actif">MODE: Passive + Active</span>
+    </div>
+  </div>
+
+  <!-- Summary badges -->
+  <div class="summary-grid">
+    <div class="badge high">
+      <div class="badge-label" data-en="HIGH RISK" data-fr="RISQUE ÉLEVÉ">HIGH RISK</div>
+      <div class="badge-value">0</div>
+    </div>
+    <div class="badge medium">
+      <div class="badge-label" data-en="MEDIUM RISK" data-fr="RISQUE MOYEN">MEDIUM RISK</div>
+      <div class="badge-value">3</div>
+    </div>
+    <div class="badge low">
+      <div class="badge-label" data-en="LOW RISK" data-fr="RISQUE FAIBLE">LOW RISK</div>
+      <div class="badge-value">12</div>
+    </div>
+    <div class="badge info">
+      <div class="badge-label" data-en="INFORMATIONAL" data-fr="INFORMATIF">INFORMATIONAL</div>
+      <div class="badge-value">8</div>
+    </div>
+  </div>
+
+  <!-- Medium alerts -->
+  <section>
+    <h2 data-en="⚠ Medium Risk Alerts (3)" data-fr="⚠ Alertes Risque Moyen (3)">⚠ Medium Risk Alerts (3)</h2>
+    <table>
+      <colgroup><col class="c-risk"/><col class="c-alert"/><col class="c-info"/></colgroup>
+      <thead>
+        <tr>
+          <th data-en="RISK" data-fr="RISQUE">RISK</th>
+          <th data-en="ALERT" data-fr="ALERTE">ALERT</th>
+          <th data-en="DESCRIPTION & SOLUTION" data-fr="DESCRIPTION & SOLUTION">DESCRIPTION &amp; SOLUTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="risk risk-medium">MEDIUM</span></td>
+          <td data-en="Content Security Policy (CSP) Header Not Set" data-fr="En-tête Content Security Policy (CSP) absent">Content Security Policy (CSP) Header Not Set</td>
+          <td>
+            <div class="desc" data-en="The HTTP Content-Security-Policy response header is not set. An attacker could exploit this to inject malicious scripts via XSS." data-fr="L'en-tête HTTP Content-Security-Policy n'est pas défini. Un attaquant pourrait en profiter pour injecter des scripts malveillants via XSS.">The HTTP Content-Security-Policy response header is not set. An attacker could exploit this to inject malicious scripts via XSS.</div>
+            <div class="solution" data-en="▶ Add Content-Security-Policy in Next.js next.config.js headers() with appropriate directives (default-src, script-src, style-src)." data-fr="▶ Ajouter Content-Security-Policy dans next.config.js via headers() avec les directives appropriées (default-src, script-src, style-src).">▶ Add Content-Security-Policy in Next.js next.config.js headers() with appropriate directives (default-src, script-src, style-src).</div>
+            <div class="url">Affected: https://sakuranode.com/ · https://sakuranode.com/engineering-dashboard</div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="risk risk-medium">MEDIUM</span></td>
+          <td data-en="Missing Anti-clickjacking Header" data-fr="En-tête anti-clickjacking absent">Missing Anti-clickjacking Header</td>
+          <td>
+            <div class="desc" data-en="The response includes neither a CSP frame-ancestors directive nor an X-Frame-Options header." data-fr="La réponse ne contient ni la directive CSP frame-ancestors ni l'en-tête X-Frame-Options.">The response includes neither a CSP frame-ancestors directive nor an X-Frame-Options header.</div>
+            <div class="solution" data-en="▶ Add X-Frame-Options: DENY or CSP frame-ancestors 'none' to prevent clickjacking." data-fr="▶ Ajouter X-Frame-Options: DENY ou CSP frame-ancestors 'none' pour prévenir le clickjacking.">▶ Add X-Frame-Options: DENY or CSP frame-ancestors 'none' to prevent clickjacking.</div>
+            <div class="url">Affected: https://sakuranode.com/</div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="risk risk-medium">MEDIUM</span></td>
+          <td data-en="Absence of Anti-CSRF Tokens" data-fr="Absence de jetons Anti-CSRF">Absence of Anti-CSRF Tokens</td>
+          <td>
+            <div class="desc" data-en="No Anti-CSRF tokens were found in HTML forms. Forms without CSRF protection could allow forged requests from a third-party domain." data-fr="Aucun jeton Anti-CSRF n'a été trouvé dans les formulaires HTML. Des formulaires non protégés permettraient des requêtes forgées depuis un domaine tiers.">No Anti-CSRF tokens were found in HTML forms. Forms without CSRF protection could allow forged requests from a third-party domain.</div>
+            <div class="solution" data-en="▶ Implement CSRF tokens via Next.js middleware or the csrf package. Alternatively use the SameSite cookie attribute." data-fr="▶ Implémenter des jetons CSRF via le middleware Next.js ou le package csrf. Utiliser aussi l'attribut SameSite sur les cookies.">▶ Implement CSRF tokens via Next.js middleware or the csrf package. Alternatively use the SameSite cookie attribute.</div>
+            <div class="url">Affected: https://sakuranode.com/contact</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Low alerts -->
+  <section>
+    <h2 data-en="ℹ Low Risk Alerts (12)" data-fr="ℹ Alertes Risque Faible (12)">ℹ Low Risk Alerts (12)</h2>
+    <table>
+      <colgroup><col class="c-risk"/><col class="c-alert"/><col class="c-info"/></colgroup>
+      <thead>
+        <tr>
+          <th data-en="RISK" data-fr="RISQUE">RISK</th>
+          <th data-en="ALERT" data-fr="ALERTE">ALERT</th>
+          <th data-en="URLS AFFECTED" data-fr="URLS AFFECTÉES">URLS AFFECTED</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="X-Content-Type-Options Header Missing" data-fr="En-tête X-Content-Type-Options absent">X-Content-Type-Options Header Missing</td><td class="url">https://sakuranode.com/ (14 URLs)</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Strict-Transport-Security Header Not Set" data-fr="En-tête Strict-Transport-Security absent">Strict-Transport-Security Header Not Set</td><td class="url">https://sakuranode.com/</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Cookie Without SameSite Attribute" data-fr="Cookie sans attribut SameSite">Cookie Without SameSite Attribute</td><td class="url">https://sakuranode.com/ (__vercel_live_token)</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Cookie Without Secure Flag" data-fr="Cookie sans attribut Secure">Cookie Without Secure Flag</td><td class="url">https://sakuranode.com/api/health-proxy</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Permissions Policy Header Not Set" data-fr="En-tête Permissions-Policy absent">Permissions Policy Header Not Set</td><td class="url">https://sakuranode.com/ (8 URLs)</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Server Leaks Version Information via Server Header" data-fr="Le serveur révèle sa version via l'en-tête Server">Server Leaks Version Information via "Server" Header</td><td class="url">https://sakuranode.com/ (server: Vercel)</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Timestamp Disclosure - Unix" data-fr="Divulgation d'horodatage Unix">Timestamp Disclosure - Unix</td><td class="url">https://sakuranode.com/api/test-results</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Cross-Domain JavaScript Source File Inclusion" data-fr="Inclusion de fichier JS depuis un domaine externe">Cross-Domain JavaScript Source File Inclusion</td><td class="url">https://sakuranode.com/ (Google Fonts)</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Information Disclosure - Suspicious Comments" data-fr="Divulgation d'informations — commentaires suspects">Information Disclosure - Suspicious Comments</td><td class="url">https://sakuranode.com/_next/static/ (2 files)</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Modern Web Application" data-fr="Application Web Moderne">Modern Web Application</td><td class="url">https://sakuranode.com/</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Loosely Scoped Cookie" data-fr="Cookie avec portée trop large">Loosely Scoped Cookie</td><td class="url">https://sakuranode.com/</td></tr>
+        <tr><td><span class="risk risk-low">LOW</span></td><td data-en="Source Code Disclosure - /WEB-INF folder" data-fr="Exposition du code source — dossier /WEB-INF">Source Code Disclosure - /WEB-INF folder</td><td class="url">https://sakuranode.com/ (false positive — Next.js)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Scan configuration -->
+  <section>
+    <h2 data-en="⚙ Scan Configuration" data-fr="⚙ Configuration du Scan">⚙ Scan Configuration</h2>
+    <div class="config-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-en="PARAMETER" data-fr="PARAMÈTRE">PARAMETER</th>
+            <th data-en="VALUE" data-fr="VALEUR">VALUE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-en="Scan type" data-fr="Type de scan">Scan type</td><td data-en="Passive + Active (standard)" data-fr="Passif + Actif (standard)">Passive + Active (standard)</td></tr>
+          <tr><td data-en="Spider" data-fr="Araignée">Spider</td><td data-en="Traditional Spider + AJAX Spider" data-fr="Spider Traditionnel + Spider AJAX">Traditional Spider + AJAX Spider</td></tr>
+          <tr><td data-en="URLs scanned" data-fr="URLs analysées">URLs scanned</td><td>47</td></tr>
+          <tr><td data-en="Requests sent" data-fr="Requêtes envoyées">Requests sent</td><td>3 812</td></tr>
+          <tr><td data-en="Scan duration" data-fr="Durée du scan">Scan duration</td><td>14m 32s</td></tr>
+          <tr><td>ZAP version</td><td>2.15.0</td></tr>
+          <tr><td data-en="Automation Framework" data-fr="Framework d'automatisation">Automation Framework</td><td>tests/security/zap-automation.yml</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <span>SAKURA NODE · MIMETIC ZERO</span>
+    <span data-en="OWASP ZAP 2.15.0 · Passive + Active Scan" data-fr="OWASP ZAP 2.15.0 · Scan Passif + Actif">OWASP ZAP 2.15.0 · Passive + Active Scan</span>
+    <span data-en="Generated: 2025-05-05" data-fr="Généré le : 2025-05-05">Generated: 2025-05-05</span>
+  </footer>
+
+</div>
+
+<script>
+  let currentLang = 'en'
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'fr' : 'en'
+    document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'FR' : 'EN'
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + currentLang)
+    })
+  }
+</script>
+</body>
+</html>

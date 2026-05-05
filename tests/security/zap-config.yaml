@@ -1,0 +1,125 @@
+# Sakura Shield — OWASP ZAP Automation Framework Config
+# FR: Configuration du scan de sécurité automatisé OWASP ZAP
+# EN: OWASP ZAP automated security scan configuration
+#
+# Usage:
+#   docker run -v $(pwd):/zap/wrk:rw -t ghcr.io/zaproxy/zaproxy:stable \
+#     zap.sh -cmd -autorun /zap/wrk/tests/security/zap-config.yaml
+#
+# Or via the ZAP daemon:
+#   node tests/security/zap-runner.js
+
+env:
+  contexts:
+    - name: "Sakura Node"
+      urls:
+        - "https://sakuranode.com"
+      includePaths:
+        - "https://sakuranode.com.*"
+      excludePaths:
+        - "https://sakuranode.com/api/health-proxy.*"
+
+    - name: "Sakura Fidelity"
+      urls:
+        - "https://sakurafidelity.com"
+      includePaths:
+        - "https://sakurafidelity.com.*"
+      excludePaths:
+        - "https://sakurafidelity.com/api/stripe.*"
+        - "https://sakurafidelity.com/api/webhooks.*"
+
+    - name: "Sakura Rewards"
+      urls:
+        - "https://sakurarewards.com"
+      includePaths:
+        - "https://sakurarewards.com.*"
+      excludePaths:
+        - "https://sakurarewards.com/api/webhooks.*"
+
+  parameters:
+    failOnError:  true
+    failOnWarning: false
+    progressToStdout: true
+
+jobs:
+  # ── Passive Scan ──────────────────────────────────────────────────────────
+  - type: passiveScan-config
+    parameters:
+      maxAlertsPerRule: 10
+      scanOnlyInScope:  true
+      maxBodySizeInBytesToScan: 10000
+
+  # ── Spider ────────────────────────────────────────────────────────────────
+  - type: spider
+    parameters:
+      context:     "Sakura Node"
+      maxDuration: 5        # minutes
+      maxDepth:    6
+      maxChildren: 20
+      acceptCookies: true
+
+  # ── Ajax Spider (for Next.js SPA) ─────────────────────────────────────────
+  - type: spiderAjax
+    parameters:
+      context:       "Sakura Node"
+      maxDuration:   3
+      maxCrawlDepth: 4
+      browserId:     "chrome-headless"
+
+  # ── Active Scan (authenticated scope only) ───────────────────────────────
+  - type: activeScan
+    parameters:
+      context:      "Sakura Node"
+      policy:       "API-Scan"
+      maxRuleDuration: 2
+      maxScanDuration: 10
+      threadPerHost:  3
+    policyDefinition:
+      rules:
+        - id: 40012  # Cross Site Scripting Reflected
+          strength: MEDIUM
+          threshold: MEDIUM
+        - id: 40014  # Cross Site Scripting Persistent
+          strength: MEDIUM
+          threshold: MEDIUM
+        - id: 40018  # SQL Injection
+          strength: HIGH
+          threshold: MEDIUM
+        - id: 10038  # Content Security Policy Header
+          strength: MEDIUM
+          threshold: LOW
+        - id: 10021  # X-Content-Type-Options
+          strength: MEDIUM
+          threshold: LOW
+        - id: 10035  # Strict-Transport-Security
+          strength: MEDIUM
+          threshold: MEDIUM
+        - id: 90033  # Loosely Scoped Cookie
+          strength: MEDIUM
+          threshold: MEDIUM
+
+  # ── Reports ──────────────────────────────────────────────────────────────
+  - type: report
+    parameters:
+      template:   "traditional-html-plus"
+      reportDir:  "/zap/wrk/test-results"
+      reportFile: "zap-report"
+      reportTitle: "Sakura Ecosystem — OWASP ZAP Security Report"
+      reportDescription: "Automated passive + active security scan of the Sakura ecosystem"
+
+  - type: report
+    parameters:
+      template:   "traditional-json"
+      reportDir:  "/zap/wrk/test-results"
+      reportFile: "zap-report"
+
+  # ── Alert filters (suppress known false positives) ───────────────────────
+  - type: alertFilter
+    parameters:
+      deleteGlobalAlerts: false
+    alertFilters:
+      - ruleId:  "10054"    # Cookie without SameSite
+        newRisk: "Informational"
+        contextName: "Sakura Rewards"
+      - ruleId:  "10096"    # Timestamp disclosure
+        newRisk: "Informational"

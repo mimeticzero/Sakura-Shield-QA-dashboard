@@ -1,0 +1,46 @@
+{
+  "sakura-node": {
+    "performance": 100,
+    "accessibility": 91,
+    "seo": 100,
+    "bestPractices": 100,
+    "fcp": 826,
+    "lcp": 1706,
+    "tti": 2348,
+    "ranAt": "2026-05-05T10:15:43.042Z",
+    "simulated": false
+  },
+  "sakura-fidelity": {
+    "performance": 94,
+    "accessibility": 89,
+    "seo": 100,
+    "bestPractices": 100,
+    "fcp": 1131,
+    "lcp": 3041,
+    "tti": 3041,
+    "ranAt": "2026-05-05T10:15:59.169Z",
+    "simulated": false
+  },
+  "sakura-rewards": {
+    "performance": 66,
+    "accessibility": 91,
+    "seo": 91,
+    "bestPractices": 100,
+    "fcp": 1748,
+    "lcp": 14900,
+    "tti": 14900,
+    "ranAt": "2026-05-05T10:16:15.791Z",
+    "simulated": false
+  },
+  "sakura-xian": {
+    "performance": 97,
+    "accessibility": 95,
+    "seo": 100,
+    "bestPractices": 100,
+    "fcp": 950,
+    "lcp": 2473,
+    "tti": 7659,
+    "ranAt": "2026-05-05T10:16:34.203Z",
+    "simulated": false
+  }
+}

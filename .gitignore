@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Environment — NEVER commit credentials
+.env
+.env.*
+!.env.example
+
+# Playwright — large binary artifacts
+playwright-report/
+test-results/results.json
+test-results/*.zip
+test-results/screenshots/
+test-results/videos/
+test-results/traces/
+test-results/the-accused-*/
+test-results/*-chromium/
+test-results/*-safari/
+test-results/*-firefox/
+
+# Keep dashboard data files
+!test-results/lighthouse-projects.json
+!test-results/history.json
+!test-results/git-context.json
+!test-results/k6-summary.json
+
+# Lighthouse tmp
+test-results/_lh-tmp/
+
+# Misc
+.DS_Store
+*.tsbuildinfo
+prompts.txt

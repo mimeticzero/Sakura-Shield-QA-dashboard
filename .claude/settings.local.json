@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat \"/c/Users/L/Desktop/The Accused - Skolvex/the-accused/data/cases/\"*)",
+      "Bash(cat \"/c/Users/L/Desktop/SakuraRewards/src/app/play/\"*/page.tsx)",
+      "Bash(cat \"/c/Users/L/Desktop/The Accused - Skolvex/the-accused/app/judge/\"*.tsx)",
+      "Bash(grep -h \"process.env\\\\.\" \"C:/Users/L/Desktop/QA-Sakura-Solutions/tests/e2e/\"*.spec.ts)",
+      "Bash(grep -oh \"process\\\\.env\\\\.[A-Z_]*\" \"C:/Users/L/Desktop/QA-Sakura-Solutions/tests/e2e/\"*.spec.ts)"
+    ]
+  }
+}
