@@ -25,6 +25,8 @@
 
 - [Overview / Vue d'ensemble](#overview)
 - [Architecture](#architecture)
+- [Page Object Model](#page-object-model)
+- [API Contract Tests](#api-contract-tests)
 - [Screenshots](#screenshots)
 - [E2E Tests](#e2e-tests)
 - [Load Tests](#load-tests)
@@ -37,9 +39,9 @@
 
 ## Overview
 
-**EN** — Sakura Shield is the central QA command center for the entire Sakura ecosystem. It provides automated end-to-end tests, load simulation, visual regression detection, and security scanning across all four Sakura products and the narrative game *The Accused*.
+**EN**: Sakura Shield is the central QA command center for the entire Sakura ecosystem. It provides automated end-to-end tests, load simulation, visual regression detection, and security scanning across all four Sakura products and the narrative game *The Accused*.
 
-**FR** — Sakura Shield est le centre de commandement QA de l'écosystème Sakura. Il fournit des tests automatisés de bout en bout, une simulation de charge, une détection de régression visuelle, et des scans de sécurité sur l'ensemble des quatre produits Sakura et le jeu narratif *The Accused*.
+**FR**: Sakura Shield est le centre de commandement QA de l'écosystème Sakura. Il fournit des tests automatisés de bout en bout, une simulation de charge, une détection de régression visuelle, et des scans de sécurité sur l'ensemble des quatre produits Sakura et le jeu narratif *The Accused*.
 
 | Product | Type | Coverage |
 |---------|------|----------|
@@ -80,9 +82,70 @@
                     └─────────────────────────────────────────────────┘
 ```
 
-**EN** — Sakura Fidelity issues loyalty points via its B2B API → Sakura Node acts as the central hub, exposing health endpoints and the engineering dashboard → Sakura Rewards consumes the loyalty layer to spin win wheels for end-customers.
+**EN**: Sakura Fidelity issues loyalty points via its B2B API → Sakura Node acts as the central hub, exposing health endpoints and the engineering dashboard → Sakura Rewards consumes the loyalty layer to spin win wheels for end-customers.
 
-**FR** — Sakura Fidelity émet des points de fidélité via son API B2B → Sakura Node joue le rôle de hub central, exposant les endpoints de santé et le dashboard → Sakura Rewards consomme la couche fidélité pour faire tourner les roues de gains.
+**FR**: Sakura Fidelity émet des points de fidélité via son API B2B → Sakura Node joue le rôle de hub central, exposant les endpoints de santé et le dashboard → Sakura Rewards consomme la couche fidélité pour faire tourner les roues de gains.
+
+---
+
+## Page Object Model
+
+**EN**: Every test suite is backed by a typed Page Object class. Locators, API calls, and domain helpers are encapsulated once; tests focus purely on assertions.
+
+**FR**: Chaque suite de tests s'appuie sur une classe Page Object typée. Les locators, appels API et helpers métier sont encapsulés une seule fois ; les tests se concentrent uniquement sur les assertions.
+
+```
+tests/e2e/pages/
+├── BasePage.ts          ← Abstract base: goto, waitForReady, getText, getLocalStorageJSON
+├── FidelityPage.ts      ← login(), getApiBalance(), redeemViaApi() → { httpStatus, balanceBefore, balanceAfter }
+├── RewardsPage.ts       ← spin(), spinViaApi(), getConfig(), chiSquareTest()
+├── XianPage.ts          ← clickNext(), getAudioRequestStatus(), getPlaylists()
+├── TheAccusedPage.ts    ← goToCase(), getSession(), getProgress(), chooseArgument(), playFullCase()
+└── index.ts             ← Barrel export
+```
+
+```typescript
+// Test reads like a specification — no locator noise
+test('atomicity invariant — balance unchanged after failed redemption', async ({ page, request }) => {
+  const fidelity = new FidelityPage(page, request)
+  const { httpStatus, balanceBefore, balanceAfter } = await fidelity.redeemViaApi(TEST_EMAIL, 9_999)
+
+  expect([403, 422]).toContain(httpStatus)          // ← blocked
+  expect(balanceAfter).toEqual(balanceBefore)        // ← atomic
+})
+```
+
+---
+
+## API Contract Tests
+
+**EN**: Pure HTTP tests with no browser. Validate status codes, response schemas, atomicity invariants, and replay protection across all Sakura APIs. Run as a dedicated Playwright project (`api`) so they can execute headlessly on any environment.
+
+**FR**: Tests HTTP purs sans navigateur. Valident codes de statut, schémas de réponse, invariants d'atomicité et protection anti-rejeu sur toutes les APIs Sakura. Exécutés comme projet Playwright dédié (`api`), fonctionnent sur n'importe quel environnement.
+
+```
+tests/e2e/api/
+├── health.api.spec.ts     ← All 4 services: HTTP 200, content-type, no 5xx, concurrent SLA 3 000ms
+├── fidelity.api.spec.ts   ← GET /api/balance, POST /api/redeem (403 guard + atomicity invariant)
+└── rewards.api.spec.ts    ← GET /api/config (probabilities sum = 1.0), POST /api/spin (replay → 409)
+```
+
+| Contract | Guarantee tested |
+|----------|-----------------|
+| `GET /api/balance` | Returns `{ email, points: number }`, type-safe, ≥ 0 |
+| `POST /api/redeem` | 403 on insufficient points + balance unchanged (atomicity) |
+| `GET /api/config` | Probabilities sum to 1.0 ± 0.001 (fair wheel) |
+| `POST /api/spin` | Invalid token → 400/403 · Replayed token → 409 |
+| `GET /* (health)` | All 4 services respond 200 within 3 000ms SLA concurrently |
+
+```typescript
+// Replay protection contract — no browser required
+test('POST /api/spin replayed token returns 409 (idempotency guard)', async ({ request }) => {
+  await request.post(`${BASE_URL}/api/spin`, { data: { token: TEST_TOKEN } })
+  const replay = await request.post(`${BASE_URL}/api/spin`, { data: { token: TEST_TOKEN } })
+  expect([403, 409]).toContain(replay.status())   // ← must reject reuse
+})
+```
 
 ---
 
@@ -113,7 +176,7 @@
 
 ---
 
-### k6 — Load Resistance Graph (1 000 VU)
+### k6: Load Resistance Graph (1 000 VU)
 
 > *k6 result showing Sakura Node handling 1 000 virtual users. P95 = 342ms. Fail rate = 0.0%.*
 
@@ -135,7 +198,7 @@
 
 ---
 
-### Percy — Visual Before/After (Bug Fix)
+### Percy: Visual Before/After (Bug Fix)
 
 > *Percy diff catching a layout regression in the Fidelity dashboard rewards section.*
 
@@ -156,7 +219,7 @@
 
 ## E2E Tests
 
-### The Accused — Narrative State Testing
+### The Accused: Narrative State Testing
 
 ```typescript
 // Simulates Case 1 (Elena), Round 1 argument A, verifies tension state change
@@ -173,7 +236,7 @@ test('should update Tension Gauge after Round 1 argument A', async ({ page }) =>
 })
 ```
 
-### Sakura Fidelity — 403 Transaction Guard
+### Sakura Fidelity: 403 Transaction Guard
 
 ```typescript
 // Proves transactional logic: 403 on insufficient points + balance unchanged
@@ -186,7 +249,7 @@ test('should return 403 and not deduct points', async ({ page, request }) => {
 })
 ```
 
-### Sakura Rewards — Distribution Validation
+### Sakura Rewards: Distribution Validation
 
 ```typescript
 // Spins 50× and validates χ² distribution matches configured probabilities
@@ -222,7 +285,7 @@ npm run test:load:stress -- -e SCENARIO=soak
 
 ## Performance Findings
 
-### Bug — Sakura Rewards: Critical LCP regression (66/100)
+### Bug: Sakura Rewards — Critical LCP regression (66/100)
 
 Lighthouse audit run on 2026-05-05 revealed a severe performance degradation on Sakura Rewards:
 
@@ -237,7 +300,7 @@ Lighthouse audit run on 2026-05-05 revealed a severe performance degradation on 
 
 **Status:** Reported. Fix pending (image lazy-loading + bundle split).
 
-> This finding demonstrates the value of systematic cross-project Lighthouse runs — the issue was invisible in manual testing due to local cache warming.
+> This finding demonstrates the value of systematic cross-project Lighthouse runs. The issue was invisible in manual testing due to local cache warming.
 
 ---
 
@@ -347,6 +410,6 @@ jobs:
 
 **[→ Engineering Dashboard](https://sakuranode.com/engineering-dashboard)**  ·  **[→ GitHub](https://github.com/MimeticZero)**
 
-*Sakura Shield — Built by Mimetic Zero*
+*Sakura Shield, Built by Mimetic Zero*
 
 </div>

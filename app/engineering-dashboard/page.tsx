@@ -440,6 +440,16 @@ export default function EngineeringDashboard() {
       ci_tip:         'GitHub Actions E2E workflow — triggered on every push to main. Runs Playwright across Chromium and WebKit.',
       commit_label:    'LATEST COMMIT',
       quality_section: 'CI & QUALITY',
+      api_section:     'API CONTRACTS',
+      api_section_tip: 'Pure HTTP contract tests — no browser. Validates status codes, response schemas, atomicity invariants and replay protection across all Sakura APIs.',
+      api_contracts: [
+        { label: 'GET  /api/balance',   tip: 'Returns { email, points } — validates numeric type and ≥ 0 constraint' },
+        { label: 'POST /api/redeem',    tip: '403 guard + atomicity: balance must not change on failed redemption' },
+        { label: 'GET  /api/config',    tip: 'Wheel probabilities sum to 1.0 — fair wheel validation' },
+        { label: 'POST /api/spin',      tip: 'Token validation + replay protection (409 on reuse)' },
+        { label: 'GET  /api/playlists', tip: 'Returns playlist array with tracks — schema validation' },
+        { label: 'GET  /*  (health)',   tip: 'All 4 services return 200 + JSON content-type within 3s SLA' },
+      ],
     },
     fr: {
       title:          'TABLEAU DE BORD INGÉNIERIE',
@@ -508,13 +518,26 @@ export default function EngineeringDashboard() {
       ci_tip:         'Workflow GitHub Actions E2E — déclenché à chaque push sur main. Lance Playwright sur Chromium et WebKit.',
       commit_label:    'DERNIER COMMIT',
       quality_section: 'CI & QUALITÉ',
+      api_section:     'CONTRATS API',
+      api_section_tip: 'Tests de contrat HTTP purs — sans navigateur. Valide codes de statut, schémas de réponse, invariants d\'atomicité et protection anti-rejeu sur toutes les APIs Sakura.',
+      api_contracts: [
+        { label: 'GET  /api/balance',   tip: 'Retourne { email, points } — valide le type numérique et la contrainte ≥ 0' },
+        { label: 'POST /api/redeem',    tip: 'Garde 403 + atomicité : le solde ne doit pas changer en cas d\'échec' },
+        { label: 'GET  /api/config',    tip: 'Les probabilités de la roue totalisent 1.0 — validation de l\'équité' },
+        { label: 'POST /api/spin',      tip: 'Validation du token + protection anti-rejeu (409 en cas de réutilisation)' },
+        { label: 'GET  /api/playlists', tip: 'Retourne un tableau de playlists avec pistes — validation du schéma' },
+        { label: 'GET  /*  (health)',   tip: 'Les 4 services retournent 200 + content-type JSON dans un SLA de 3s' },
+      ],
     },
   }[lang]
 
   const matrixColor = (s: 'passed' | 'failed' | 'skipped' | null) =>
     s === 'passed' ? '#00f5ff' : s === 'failed' ? '#ff2d78' : s === 'skipped' ? '#f59e0b' : '#1e293b'
 
-  const browserLabel = (b: string) => b === 'chromium' ? 'CR' : b === 'mobile-safari' ? 'iOS' : b
+  const browserLabel = (b: string) =>
+    b === 'chromium'      ? 'CR'  :
+    b === 'mobile-safari' ? 'iOS' :
+    b === 'api'           ? 'API' : b
 
   return (
     <div style={{
@@ -794,7 +817,7 @@ export default function EngineeringDashboard() {
                   <tr>
                     <th style={{ textAlign: 'left', padding: '6px 12px', color: '#64748b', letterSpacing: '2px', fontWeight: 400, minWidth: '280px' }}></th>
                     {browsers.map(b => (
-                      <th key={b} style={{ textAlign: 'center', padding: '6px 16px', color: b === 'chromium' ? '#00f5ff' : '#9b30ff', letterSpacing: '2px', fontWeight: 700 }}>
+                      <th key={b} style={{ textAlign: 'center', padding: '6px 16px', color: b === 'chromium' ? '#00f5ff' : b === 'api' ? '#f59e0b' : '#9b30ff', letterSpacing: '2px', fontWeight: 700 }}>
                         {browserLabel(b)}
                       </th>
                     ))}
@@ -866,6 +889,40 @@ export default function EngineeringDashboard() {
 
         </div>
 
+        {/* ── API Contracts ── */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.72 }}
+          style={{ marginTop: '24px', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(245,158,11,0.2)', borderTop: '2px solid #f59e0b', padding: '24px', borderRadius: '2px' }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', flexWrap: 'wrap', gap: '8px' }}>
+            <h2 title={tr.api_section_tip} style={{ fontSize: '12px', letterSpacing: '4px', color: '#f59e0b', cursor: 'help' }}>{tr.api_section}</h2>
+            <span style={{ fontSize: '11px', letterSpacing: '2px', color: '#f59e0b', border: '1px solid rgba(245,158,11,0.4)', padding: '3px 10px', borderRadius: '2px', opacity: 0.8 }}>
+              NO BROWSER · PURE HTTP
+            </span>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '10px' }}>
+            {tr.api_contracts.map((c, i) => (
+              <div
+                key={i}
+                title={c.tip}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '12px',
+                  background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.15)',
+                  padding: '12px 16px', borderRadius: '2px', cursor: 'help',
+                }}
+              >
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b', boxShadow: '0 0 6px #f59e0b', flexShrink: 0 }} />
+                <code style={{ fontSize: '12px', color: '#e2e8f0', letterSpacing: '0.5px', fontFamily: 'Space Mono, Courier New, monospace', flex: 1 }}>
+                  {c.label}
+                </code>
+                <span style={{ fontSize: '10px', color: '#f59e0b', letterSpacing: '1px', opacity: 0.7, flexShrink: 0 }}>CONTRACT</span>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
         {/* ── Latest test runs table ── */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -915,8 +972,8 @@ export default function EngineeringDashboard() {
                         {testName(test.test)}
                       </td>
                       <td style={{ padding: '10px 12px', whiteSpace: 'nowrap' }}>
-                        <span style={{ fontSize: '12px', letterSpacing: '1px', color: test.project === 'chromium' ? '#00f5ff' : '#9b30ff', opacity: 0.8 }}>
-                          {test.project === 'chromium' ? 'CR' : test.project === 'mobile-safari' ? 'iOS' : (test.project ?? '—')}
+                        <span style={{ fontSize: '12px', letterSpacing: '1px', color: test.project === 'chromium' ? '#00f5ff' : test.project === 'api' ? '#f59e0b' : '#9b30ff', opacity: 0.8 }}>
+                          {test.project === 'chromium' ? 'CR' : test.project === 'mobile-safari' ? 'iOS' : test.project === 'api' ? 'API' : (test.project ?? '—')}
                         </span>
                       </td>
                       <td style={{ padding: '10px 12px' }}>

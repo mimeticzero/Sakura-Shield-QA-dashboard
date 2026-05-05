@@ -36,20 +36,28 @@ export default defineConfig({
   },
 
   projects: [
+    /* ── API contract tests — no browser ── */
+    {
+      name:      'api',
+      use:       {},
+      testMatch: '**/api/**/*.spec.ts',
+    },
     /* ── Smoke — Desktop Chrome ─── */
     {
       name:  'chromium',
       use:   { ...devices['Desktop Chrome'] },
+      testIgnore: '**/api/**/*.spec.ts',
     },
     /* ── Smoke — Mobile ─────────── */
     {
       name:  'mobile-safari',
       use:   { ...devices['iPhone 14'] },
+      testIgnore: '**/api/**/*.spec.ts',
     },
     /* ── Visual — Percy ─────────── */
     {
-      name:  'visual',
-      use:   { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
+      name:      'visual',
+      use:       { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
       testMatch: '**/visual/**/*.spec.ts',
     },
   ],

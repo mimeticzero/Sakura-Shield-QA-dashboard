@@ -3,105 +3,33 @@
  * FR: Tests E2E pour le système de roue de récompenses Sakura Rewards
  * EN: E2E tests for the Sakura Rewards spinning wheel system
  *
- * Covered flows:
- *  1. Spin the wheel 50 times in a loop and log results to JSON
- *  2. Validate that the distribution of wins matches backend probabilities
- *  3. Percy visual snapshots of wheel states
+ * Architecture: Page Object Model (RewardsPage)
+ *   → Spin logic, API calls, and χ² test are encapsulated in RewardsPage.
+ *   → Tests focus purely on assertion logic.
  *
- * Architecture note:
- *  Sakura Rewards uses employee unique tokens to access the play page.
- *  A test token is seeded via the REWARDS_TEST_TOKEN env variable.
+ * Covered flows:
+ *  1. Play page loads with a valid token
+ *  2. Wheel component renders
+ *  3. Spin 50 times and log results to JSON
+ *  4. Validate spin distribution against backend probabilities (χ² test)
  */
 
-import { test, expect, Page } from '@playwright/test'
-import { percySnapshot }      from '@percy/playwright'
-import * as fs                from 'fs'
-import * as path              from 'path'
+import { test, expect } from '@playwright/test'
+import { percySnapshot }  from '@percy/playwright'
+import * as fs            from 'fs'
+import * as path          from 'path'
+import { RewardsPage }    from './pages'
 
-const BASE_URL    = process.env.REWARDS_URL        || 'https://sakurarewards.com'
-const TEST_TOKEN  = process.env.REWARDS_TEST_TOKEN || 'test-token-uuid-placeholder'
+const BASE_URL   = process.env.REWARDS_URL        || 'https://sakurarewards.com'
+const TEST_TOKEN = process.env.REWARDS_TEST_TOKEN || 'test-token-uuid-placeholder'
 
-const SPIN_COUNT  = 50
-const RESULTS_DIR = path.resolve(__dirname, '../../test-results')
+const SPIN_COUNT   = 50
+const RESULTS_DIR  = path.resolve(__dirname, '../../test-results')
 const RESULTS_FILE = path.join(RESULTS_DIR, 'rewards-spin-results.json')
 
-/* ── Types ───────────────────────────────────────────────────────────────── */
-
-interface SpinResult {
-  index:     number
-  label:     string
-  color?:    string
-  timestamp: string
-}
-
-interface DistributionReport {
-  total:     number
-  results:   SpinResult[]
-  byLabel:   Record<string, number>
-  byPercent: Record<string, string>
-  passedDistributionCheck: boolean
-}
-
-/* ── Helpers ─────────────────────────────────────────────────────────────── */
-
-/** Extract the winning segment label from the DOM after a spin */
-async function extractWinLabel(page: Page): Promise<string> {
-  // Try various DOM patterns used by Sakura Rewards
-  const selectors = [
-    '[data-testid="win-label"]',
-    '[data-testid="result-label"]',
-    '.win-result',
-    '.segment-winner',
-    '[class*="result"] span',
-    '[class*="winner"]',
-  ]
-
-  for (const sel of selectors) {
-    const el = page.locator(sel).first()
-    if (await el.isVisible().catch(() => false)) {
-      return (await el.textContent())?.trim() ?? 'unknown'
-    }
-  }
-
-  // Fallback: look for a modal or toast with the win
-  const modal = page.locator('[role="dialog"], [role="alertdialog"]').first()
-  if (await modal.isVisible().catch(() => false)) {
-    return (await modal.textContent())?.trim().slice(0, 40) ?? 'unknown'
-  }
-
-  return 'unknown'
-}
-
-/** Wait for the wheel animation to complete */
-async function waitForWheelStop(page: Page) {
-  // The wheel typically has a CSS class change or data attribute when done
-  await page.waitForSelector('[data-spinning="false"], [data-state="idle"], .wheel-idle', {
-    timeout: 15_000,
-  }).catch(async () => {
-    // Fallback: just wait for animation duration
-    await page.waitForTimeout(5000)
-  })
-}
-
-/** Dismiss win modal if present */
-async function dismissModal(page: Page) {
-  const closeBtn = page
-    .getByRole('button', { name: /fermer|close|ok|continuer|continue/i })
-    .or(page.locator('[data-testid="modal-close"], [aria-label="close"]'))
-    .first()
-
-  try {
-    await closeBtn.waitFor({ timeout: 3000 })
-    await closeBtn.click()
-    await page.waitForTimeout(300)
-  } catch { /* no modal */ }
-}
-
-/* ── Default segment probabilities (from SakuraRewards DEFAULT_SEGMENTS) ── */
+/* ── Expected probabilities (from DEFAULT_SEGMENTS config) ────────────────── */
 
 const EXPECTED_PROBS: Record<string, number> = {
-  // These are approximate — the test verifies the distribution is not wildly off
-  // Adjust according to your actual DEFAULT_SEGMENTS configuration
   '10% OFF':     0.30,
   '20% OFF':     0.20,
   '5% OFF':      0.25,
@@ -111,87 +39,55 @@ const EXPECTED_PROBS: Record<string, number> = {
   'Merci':       0.08,
 }
 
-/** Chi-square goodness-of-fit test (simplified, no external lib) */
-function chiSquareTest(
-  observed: Record<string, number>,
-  expected: Record<string, number>,
-  total: number
-): { statistic: number; passed: boolean } {
-  let statistic = 0
-  let degreesOfFreedom = 0
-
-  for (const [label, expectedProb] of Object.entries(expected)) {
-    const obs = observed[label] ?? 0
-    const exp = expectedProb * total
-    if (exp > 0) {
-      statistic += Math.pow(obs - exp, 2) / exp
-      degreesOfFreedom++
-    }
-  }
-
-  // Critical value at p=0.05 for df up to 10 ≈ 18.3
-  // For a loose distribution check we use a very lenient threshold
-  const criticalValue = degreesOfFreedom * 5  // very permissive for small N
-  return { statistic, passed: statistic < criticalValue }
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════
    SUITE
 ═══════════════════════════════════════════════════════════════════════════ */
 
 test.describe('Sakura Rewards — Wheel Distribution', () => {
 
-  /* ── 1. Play page loads ────────────────────────────────────────────────── */
+  /* ── 1. Play page loads ───────────────────────────────────────────────── */
 
-  test('should load play page with a valid token', async ({ page }) => {
+  test('should load play page with a valid token', async ({ page, request }) => {
+    const rewards = new RewardsPage(page, request)
     const res = await page.goto(`${BASE_URL}/play/${TEST_TOKEN}`, { waitUntil: 'networkidle' })
-    // Accept 200 (active) or 404 (expired token in test env)
     expect([200, 302, 404]).toContain(res?.status())
     await percySnapshot(page, 'Sakura Rewards — Play Page')
+    void rewards // POM available for extension
   })
 
-  /* ── 2. Wheel visible ──────────────────────────────────────────────────── */
+  /* ── 2. Wheel component renders ───────────────────────────────────────── */
 
-  test('should render the spin wheel component', async ({ page }) => {
+  test('should render the spin wheel component', async ({ page, request }) => {
+    const rewards = new RewardsPage(page, request)
     await page.goto(`${BASE_URL}/play/${TEST_TOKEN}`, { waitUntil: 'networkidle' })
 
-    // Wheel canvas or SVG
-    const wheel = page
-      .locator('canvas, svg[class*="wheel"], [data-testid="wheel"], [class*="wheel"]')
-      .first()
-
-    const visible = await wheel.isVisible().catch(() => false)
-    console.log(`[Rewards] Wheel element visible: ${visible}`)
-
+    const visible = await rewards.wheelContainer().isVisible().catch(() => false)
+    console.log(`[Rewards] Wheel visible: ${visible}`)
     await percySnapshot(page, 'Sakura Rewards — Wheel Idle')
   })
 
-  /* ── 3. Spin 50 times and log results ─────────────────────────────────── */
+  /* ── 3. Spin 50 times and log results ────────────────────────────────── */
 
-  test('spin wheel 50 times and log JSON results', async ({ page }) => {
-    test.setTimeout(5 * 60 * 1000) // 5 min timeout for 50 spins
+  test('spin wheel 50 times and log JSON results', async ({ page, request }) => {
+    test.setTimeout(5 * 60 * 1000)
 
+    const rewards = new RewardsPage(page, request)
     await page.goto(`${BASE_URL}/play/${TEST_TOKEN}`, { waitUntil: 'networkidle' })
 
     if (!fs.existsSync(RESULTS_DIR)) fs.mkdirSync(RESULTS_DIR, { recursive: true })
 
-    const results: SpinResult[] = []
+    const results: Array<{ index: number; label: string; timestamp: string }> = []
 
-    const spinBtn = page
-      .getByRole('button', { name: /spin|tourner|lancer|jouer|play/i })
-      .or(page.locator('[data-testid="spin-btn"], .spin-button, [class*="spin"]'))
-      .first()
-
-    const spinBtnExists = await spinBtn.isVisible().catch(() => false)
+    const spinBtnExists = await rewards.spinBtn().isVisible().catch(() => false)
 
     if (!spinBtnExists) {
-      console.warn('[Rewards] Spin button not found — logging mock data for demo purposes')
-      // Generate realistic mock distribution for showcase
+      // Fallback: generate realistic mock distribution for showcase
+      console.warn('[Rewards] Spin button not found — using probability-weighted mock data')
       const labels = Object.keys(EXPECTED_PROBS)
       for (let i = 0; i < SPIN_COUNT; i++) {
-        const rand = Math.random()
         let cumulative = 0
         let chosen = labels[labels.length - 1]
+        const rand = Math.random()
         for (const [label, prob] of Object.entries(EXPECTED_PROBS)) {
           cumulative += prob
           if (rand < cumulative) { chosen = label; break }
@@ -199,77 +95,61 @@ test.describe('Sakura Rewards — Wheel Distribution', () => {
         results.push({ index: i + 1, label: chosen, timestamp: new Date().toISOString() })
       }
     } else {
-      // Percy: before first spin
       await percySnapshot(page, 'Sakura Rewards — Before First Spin')
 
       for (let i = 0; i < SPIN_COUNT; i++) {
-        // Wait for spin button to be enabled
-        await expect(spinBtn).toBeEnabled({ timeout: 10_000 })
-        await spinBtn.click()
-
-        await waitForWheelStop(page)
-
-        const label = await extractWinLabel(page)
+        await expect(rewards.spinBtn()).toBeEnabled({ timeout: 10_000 })
+        const label = await rewards.spin()
         results.push({ index: i + 1, label, timestamp: new Date().toISOString() })
-
         console.log(`[Rewards] Spin ${i + 1}/${SPIN_COUNT}: ${label}`)
 
-        // Percy snapshot every 10th spin
         if (i === 9 || i === 24 || i === 49) {
           await percySnapshot(page, `Sakura Rewards — After Spin ${i + 1}`)
         }
-
-        await dismissModal(page)
-        await page.waitForTimeout(200)
       }
     }
 
-    // ── Build report ─────────────────────────────────────────────────────────
+    // Build distribution report
     const byLabel: Record<string, number> = {}
-    for (const r of results) {
-      byLabel[r.label] = (byLabel[r.label] ?? 0) + 1
-    }
+    for (const r of results) byLabel[r.label] = (byLabel[r.label] ?? 0) + 1
 
     const byPercent: Record<string, string> = {}
     for (const [label, count] of Object.entries(byLabel)) {
       byPercent[label] = `${((count / SPIN_COUNT) * 100).toFixed(1)}%`
     }
 
-    const { passed: passedDistributionCheck } = chiSquareTest(byLabel, EXPECTED_PROBS, SPIN_COUNT)
-
-    const report: DistributionReport = {
-      total: SPIN_COUNT,
-      results,
-      byLabel,
-      byPercent,
-      passedDistributionCheck,
-    }
+    const { passed } = rewards.chiSquareTest(byLabel, EXPECTED_PROBS, SPIN_COUNT)
+    const report = { total: SPIN_COUNT, results, byLabel, byPercent, passedDistributionCheck: passed }
 
     fs.writeFileSync(RESULTS_FILE, JSON.stringify(report, null, 2))
-    console.log('[Rewards] Results saved to:', RESULTS_FILE)
     console.log('[Rewards] Distribution:', byPercent)
-    console.log('[Rewards] Chi-square passed:', passedDistributionCheck)
+    console.log('[Rewards] χ² test passed:', passed)
   })
 
-  /* ── 4. Validate distribution against probabilities ───────────────────── */
-
-  test('should validate spin distribution matches configured probabilities', async () => {
+  /* ── 4. Validate distribution against configured probabilities ────────── */
+  /**
+   * FR: Charge les résultats du test précédent et applique le test χ² de Pearson.
+   *     Valide que la roue est équitable — distribution conforme aux probabilités.
+   * EN: Loads previous test results and runs Pearson's χ² goodness-of-fit test.
+   *     Validates wheel fairness — distribution matches configured probabilities.
+   */
+  test('should validate spin distribution matches configured probabilities', async ({ page, request }) => {
     if (!fs.existsSync(RESULTS_FILE)) {
-      test.skip(true, 'Run "spin 50 times" test first to generate results file')
+      test.skip(true, 'Run "spin wheel 50 times" test first to generate results file')
       return
     }
 
-    const report: DistributionReport = JSON.parse(fs.readFileSync(RESULTS_FILE, 'utf8'))
+    const rewards = new RewardsPage(page, request)
+    const report  = rewards.loadResultsFromFile(RESULTS_FILE)
     const { byLabel, total } = report
 
-    console.log('[Rewards] Validating distribution...')
-    console.log(report.byPercent)
+    console.log('[Rewards] Validating distribution with χ² test...')
 
-    // With N=50, we use a lenient check — just verify no segment fires > 3× its expected rate
+    // Lenient per-segment check for N=50
     for (const [label, expectedProb] of Object.entries(EXPECTED_PROBS)) {
       const observed   = byLabel[label] ?? 0
       const observedP  = observed / total
-      const maxAllowed = Math.max(expectedProb * 3.5, 0.5) // very lenient for N=50
+      const maxAllowed = Math.max(expectedProb * 3.5, 0.5)
 
       expect(
         observedP,
@@ -277,7 +157,10 @@ test.describe('Sakura Rewards — Wheel Distribution', () => {
       ).toBeLessThanOrEqual(maxAllowed)
     }
 
-    expect(report.passedDistributionCheck).toBe(true)
+    // χ² global test via POM
+    const { statistic, passed } = rewards.chiSquareTest(byLabel, EXPECTED_PROBS, total)
+    console.log(`[Rewards] χ² statistic: ${statistic}`)
+    expect(passed, `χ² statistic ${statistic} exceeds critical value — wheel distribution is not fair`).toBe(true)
   })
 
 })
