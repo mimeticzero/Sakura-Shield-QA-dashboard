@@ -2,7 +2,7 @@
   {
     "app": "sakura-fidelity",
     "url": "https://sakurafidelity.com/login",
-    "scanAt": "2026-05-05T18:36:28.017Z",
+    "scanAt": "2026-05-05T18:48:16.593Z",
     "critical": 1,
     "serious": 0,
     "moderate": 3,
@@ -37,7 +37,7 @@
   {
     "app": "sakura-rewards",
     "url": "https://sakurarewards.com/play/test-token-uuid-placeholder",
-    "scanAt": "2026-05-05T18:36:10.232Z",
+    "scanAt": "2026-05-05T18:47:57.119Z",
     "critical": 0,
     "serious": 2,
     "moderate": 3,
@@ -78,7 +78,7 @@
   {
     "app": "sakura-xian",
     "url": "https://sakuraxian.com",
-    "scanAt": "2026-05-05T18:36:11.033Z",
+    "scanAt": "2026-05-05T18:47:58.660Z",
     "critical": 0,
     "serious": 0,
     "moderate": 0,
