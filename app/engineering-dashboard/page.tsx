@@ -690,15 +690,10 @@ export default function EngineeringDashboard() {
           >
             <h2 style={{ fontSize: '12px', letterSpacing: '4px', color: '#ff2d78', marginBottom: '20px' }}>{tr.links}</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a href="https://github.com/MimeticZero" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/mimeticzero/Sakura-Shield-QA-dashboard" target="_blank" rel="noopener noreferrer"
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', padding: '14px 16px', border: '1px solid rgba(255,45,120,0.3)', color: '#e2e8f0', textDecoration: 'none', fontSize: '12px', letterSpacing: '2px', borderRadius: '2px' }}>
                 <span style={{ color: '#ff2d78', fontSize: '16px' }}>{'</>'}</span>
                 {tr.viewCode}
-              </a>
-              <a href="https://sakuranode.com" target="_blank" rel="noopener noreferrer"
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', padding: '14px 16px', border: '1px solid rgba(0,245,255,0.3)', color: '#00f5ff', textDecoration: 'none', fontSize: '12px', letterSpacing: '2px', background: 'rgba(0,245,255,0.05)', borderRadius: '2px' }}>
-                <span style={{ fontSize: '16px' }}>↗</span>
-                {tr.liveDemo}
               </a>
             </div>
           </motion.section>
