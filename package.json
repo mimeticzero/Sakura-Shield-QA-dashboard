@@ -12,6 +12,7 @@
     "test:e2e:ui": "playwright test --config tests/e2e/playwright.config.ts --ui",
     "test:e2e:headed": "playwright test --config tests/e2e/playwright.config.ts --headed",
     "test:visual": "percy exec -- playwright test --config tests/e2e/playwright.config.ts --project=visual",
+    "test:lighthouse": "node tests/load/lighthouse-all.js",
     "test:load": "k6 run tests/load/k6-sakura-node.js",
     "test:load:smoke": "k6 run tests/load/k6-smoke.js",
     "test:load:stress": "k6 run tests/load/k6-stress.js",
