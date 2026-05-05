@@ -12,7 +12,6 @@ out/
 
 # Playwright — large binary artifacts
 playwright-report/
-test-results/results.json
 test-results/*.zip
 test-results/screenshots/
 test-results/videos/
@@ -35,3 +34,6 @@ test-results/_lh-tmp/
 .DS_Store
 *.tsbuildinfo
 prompts.txt
+
+# Claude Code — internal memory and session files, never commit
+.claude/

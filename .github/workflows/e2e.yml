@@ -41,20 +41,52 @@ jobs:
           XIAN_URL:             ${{ secrets.XIAN_URL }}
           THE_ACCUSED_URL:      ${{ secrets.THE_ACCUSED_URL }}
 
+      - name: Update history.json
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          const results = JSON.parse(fs.readFileSync('test-results/results.json', 'utf8'));
+          const suites = results.suites ?? [];
+          let passed = 0, failed = 0, total = 0;
+          function walk(s) {
+            (s.specs ?? []).forEach(spec => {
+              spec.tests?.forEach(t => {
+                total++;
+                const ok = t.results?.some(r => r.status === 'passed');
+                ok ? passed++ : failed++;
+              });
+            });
+            (s.suites ?? []).forEach(walk);
+          }
+          suites.forEach(walk);
+          const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
+          const today = new Date().toISOString().slice(0, 10);
+          const histPath = 'test-results/history.json';
+          const hist = JSON.parse(fs.readFileSync(histPath, 'utf8'));
+          const last = hist[hist.length - 1];
+          if (last?.date === today) { last.passRate = passRate; last.passed = passed; last.failed = failed; last.total = total; }
+          else { hist.push({ date: today, passRate, passed, failed, total }); }
+          if (hist.length > 30) hist.splice(0, hist.length - 30);
+          fs.writeFileSync(histPath, JSON.stringify(hist, null, 2));
+          console.log('history updated:', today, passRate + '%');
+          "
+
+      - name: Commit test results to repo
+        if: always() && github.event_name != 'pull_request'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add test-results/results.json test-results/history.json
+          git diff --staged --quiet || git commit -m "ci: update test results [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-${{ github.run_number }}
           path: playwright-report/
-          retention-days: 30
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: test-results-${{ github.run_number }}
-          path: |
-            test-results/results.json
-            test-results/history.json
           retention-days: 30
