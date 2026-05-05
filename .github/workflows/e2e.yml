@@ -122,10 +122,19 @@ jobs:
             -d '{"event_type":"qa-results-updated"}'
         continue-on-error: true
 
-      - name: Upload Playwright report
+      - name: Upload Playwright report artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-${{ github.run_number }}
           path: playwright-report/
           retention-days: 30
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always() && github.event_name != 'pull_request'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          destination_dir: report
+          commit_message: "ci: deploy Playwright report #${{ github.run_number }} [skip ci]"
