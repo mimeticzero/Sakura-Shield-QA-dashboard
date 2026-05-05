@@ -7,6 +7,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   e2e:
     name: Playwright E2E
@@ -46,6 +49,13 @@ jobs:
         run: |
           node -e "
           const fs = require('fs');
+
+          // results.json may not exist if tests crashed before writing
+          if (!fs.existsSync('test-results/results.json')) {
+            console.log('No results.json found, skipping history update');
+            process.exit(0);
+          }
+
           const results = JSON.parse(fs.readFileSync('test-results/results.json', 'utf8'));
           const suites = results.suites ?? [];
           let passed = 0, failed = 0, total = 0;
@@ -63,10 +73,18 @@ jobs:
           const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
           const today = new Date().toISOString().slice(0, 10);
           const histPath = 'test-results/history.json';
-          const hist = JSON.parse(fs.readFileSync(histPath, 'utf8'));
+
+          // Create history file if missing
+          const hist = fs.existsSync(histPath)
+            ? JSON.parse(fs.readFileSync(histPath, 'utf8'))
+            : [];
+
           const last = hist[hist.length - 1];
-          if (last?.date === today) { last.passRate = passRate; last.passed = passed; last.failed = failed; last.total = total; }
-          else { hist.push({ date: today, passRate, passed, failed, total }); }
+          if (last?.date === today) {
+            last.passRate = passRate; last.passed = passed; last.failed = failed; last.total = total;
+          } else {
+            hist.push({ date: today, passRate, passed, failed, total });
+          }
           if (hist.length > 30) hist.splice(0, hist.length - 30);
           fs.writeFileSync(histPath, JSON.stringify(hist, null, 2));
           console.log('history updated:', today, passRate + '%');
@@ -77,14 +95,13 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add test-results/results.json test-results/history.json
           git diff --staged --quiet || git commit -m "ci: update test results [skip ci]"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Trigger SakuraNode dashboard sync
-        if: github.event_name != 'pull_request'
+        if: always() && github.event_name != 'pull_request'
         run: |
           curl -s -X POST \
             -H "Accept: application/vnd.github+json" \
