@@ -1,8 +1,8 @@
 {
   "config": {
-    "configFile": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\playwright.config.ts",
-    "rootDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/tests/e2e",
-    "forbidOnly": false,
+    "configFile": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/playwright.config.ts",
+    "rootDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
+    "forbidOnly": true,
     "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
@@ -11,20 +11,64 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 8
+      "ci": {
+        "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
+        "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+        "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+      },
+      "gitCommit": {
+        "shortHash": "4524850",
+        "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+        "subject": "fix: remove rebase.",
+        "body": "fix: remove rebase.\n",
+        "author": {
+          "name": "molambat",
+          "email": "mimeticzero@protonmail.com",
+          "time": 1777980881000
+        },
+        "committer": {
+          "name": "molambat",
+          "email": "mimeticzero@protonmail.com",
+          "time": 1777980881000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/test-results",
+        "outputDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 2,
         "metadata": {
-          "actualWorkers": 8
+          "ci": {
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
+            "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+          },
+          "gitCommit": {
+            "shortHash": "4524850",
+            "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+            "subject": "fix: remove rebase.",
+            "body": "fix: remove rebase.\n",
+            "author": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1777980881000
+            },
+            "committer": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1777980881000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/tests/e2e",
+        "testDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -32,15 +76,37 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/test-results",
+        "outputDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 2,
         "metadata": {
-          "actualWorkers": 8
+          "ci": {
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
+            "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+          },
+          "gitCommit": {
+            "shortHash": "4524850",
+            "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+            "subject": "fix: remove rebase.",
+            "body": "fix: remove rebase.\n",
+            "author": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1777980881000
+            },
+            "committer": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1777980881000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 4
         },
         "id": "mobile-safari",
         "name": "mobile-safari",
-        "testDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/tests/e2e",
+        "testDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -48,15 +114,37 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/test-results",
+        "outputDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 2,
         "metadata": {
-          "actualWorkers": 8
+          "ci": {
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
+            "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+          },
+          "gitCommit": {
+            "shortHash": "4524850",
+            "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
+            "subject": "fix: remove rebase.",
+            "body": "fix: remove rebase.\n",
+            "author": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1777980881000
+            },
+            "committer": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1777980881000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 4
         },
         "id": "visual",
         "name": "visual",
-        "testDir": "C:/Users/L/Desktop/QA-Sakura-Solutions/tests/e2e",
+        "testDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/visual/**/*.spec.ts"
@@ -69,14 +157,14 @@
       [
         "html",
         {
-          "outputFolder": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\playwright-report",
+          "outputFolder": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/playwright-report",
           "open": "never"
         }
       ],
       [
         "json",
         {
-          "outputFile": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\results.json"
+          "outputFile": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/results.json"
         }
       ],
       [
@@ -93,7 +181,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.59.1",
-    "workers": 8,
+    "workers": 4,
     "webServer": null
   },
   "suites": [
@@ -126,7 +214,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4573,
+                      "duration": 2727,
                       "errors": [],
                       "stdout": [
                         {
@@ -135,7 +223,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.433Z",
+                      "startTime": "2026-05-05T11:47:20.998Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -164,7 +252,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5057,
+                      "duration": 4407,
                       "errors": [],
                       "stdout": [
                         {
@@ -173,7 +261,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.469Z",
+                      "startTime": "2026-05-05T11:47:20.969Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -202,7 +290,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4736,
+                      "duration": 3341,
                       "errors": [],
                       "stdout": [
                         {
@@ -220,7 +308,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.465Z",
+                      "startTime": "2026-05-05T11:47:20.941Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -249,7 +337,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 4925,
+                      "duration": 3187,
                       "errors": [],
                       "stdout": [
                         {
@@ -264,7 +352,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.494Z",
+                      "startTime": "2026-05-05T11:47:20.954Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -290,15 +378,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 261,
+                      "duration": 1385,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.494Z",
+                      "startTime": "2026-05-05T11:47:25.264Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -324,10 +412,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 4,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4279,
+                      "duration": 12239,
                       "errors": [],
                       "stdout": [
                         {
@@ -336,7 +424,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:00.292Z",
+                      "startTime": "2026-05-05T11:47:31.992Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -362,10 +450,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 7,
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 5091,
+                      "duration": 11900,
                       "errors": [],
                       "stdout": [
                         {
@@ -374,7 +462,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:00.554Z",
+                      "startTime": "2026-05-05T11:47:32.412Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -400,10 +488,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4264,
+                      "duration": 12452,
                       "errors": [],
                       "stdout": [
                         {
@@ -421,7 +509,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:01.975Z",
+                      "startTime": "2026-05-05T11:47:32.700Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -447,10 +535,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 11,
-                      "parallelIndex": 3,
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4601,
+                      "duration": 12149,
                       "errors": [],
                       "stdout": [
                         {
@@ -465,7 +553,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:03.942Z",
+                      "startTime": "2026-05-05T11:47:33.570Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -491,15 +579,15 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 12,
-                      "parallelIndex": 0,
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 426,
+                      "duration": 1244,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:04.174Z",
+                      "startTime": "2026-05-05T11:47:45.091Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -542,19 +630,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 5,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 5249,
+                      "duration": 2355,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.564Z",
+                      "startTime": "2026-05-05T11:47:25.744Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -580,22 +664,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 6,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 5249,
+                      "duration": 1188,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "[Rewards] Wheel element visible: false\n"
-                        },
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.521Z",
+                      "startTime": "2026-05-05T11:47:25.886Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -621,17 +702,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4747,
+                      "duration": 1767,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "[Rewards] Results saved to: C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\rewards-spin-results.json\n"
+                          "text": "[Rewards] Results saved to: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/rewards-spin-results.json\n"
                         },
                         {
-                          "text": "[Rewards] Distribution: {\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'26.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'26.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'4.0%'\u001b[39m,\n  Merci: \u001b[32m'6.0%'\u001b[39m,\n  Jackpot: \u001b[32m'4.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'2.0%'\u001b[39m\n}\n"
+                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  Jackpot: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m\n}\n"
                         },
                         {
                           "text": "[Rewards] Chi-square passed: \u001b[33mtrue\u001b[39m\n"
@@ -643,7 +724,7 @@
                         }
                       ],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.522Z",
+                      "startTime": "2026-05-05T11:47:26.673Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -668,7 +749,7 @@
                       "type": "skip",
                       "description": "Run \"spin 50 times\" test first to generate results file",
                       "location": {
-                        "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\sakura-rewards.spec.ts",
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-rewards.spec.ts",
                         "line": 258,
                         "column": 12
                       }
@@ -679,21 +760,21 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 1,
+                      "duration": 2,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.795Z",
+                      "startTime": "2026-05-05T11:47:26.942Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Run \"spin 50 times\" test first to generate results file",
                           "location": {
-                            "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\sakura-rewards.spec.ts",
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-rewards.spec.ts",
                             "line": 258,
                             "column": 12
                           }
@@ -723,19 +804,15 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 12,
-                      "parallelIndex": 0,
+                      "workerIndex": 4,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3062,
+                      "duration": 4304,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:04.658Z",
+                      "startTime": "2026-05-05T11:47:45.413Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -761,10 +838,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2645,
+                      "duration": 3931,
                       "errors": [],
                       "stdout": [
                         {
@@ -773,7 +850,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:04.795Z",
+                      "startTime": "2026-05-05T11:47:45.840Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -799,17 +876,17 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 7,
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2300,
+                      "duration": 3722,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "[Rewards] Results saved to: C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\rewards-spin-results.json\n"
+                          "text": "[Rewards] Results saved to: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/rewards-spin-results.json\n"
                         },
                         {
-                          "text": "[Rewards] Distribution: {\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'40.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'18.0%'\u001b[39m,\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'14.0%'\u001b[39m,\n  Merci: \u001b[32m'4.0%'\u001b[39m,\n  Jackpot: \u001b[32m'2.0%'\u001b[39m\n}\n"
+                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'4.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'14.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'36.0%'\u001b[39m,\n  Merci: \u001b[32m'6.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'14.0%'\u001b[39m,\n  Jackpot: \u001b[32m'4.0%'\u001b[39m\n}\n"
                         },
                         {
                           "text": "[Rewards] Chi-square passed: \u001b[33mtrue\u001b[39m\n"
@@ -821,7 +898,7 @@
                         }
                       ],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:05.846Z",
+                      "startTime": "2026-05-05T11:47:45.904Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -847,22 +924,22 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 14,
+                      "duration": 60,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "[Rewards] Validating distribution...\n"
                         },
                         {
-                          "text": "{\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'26.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'26.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'4.0%'\u001b[39m,\n  Merci: \u001b[32m'6.0%'\u001b[39m,\n  Jackpot: \u001b[32m'4.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'2.0%'\u001b[39m\n}\n"
+                          "text": "{\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  Jackpot: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m\n}\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:06.382Z",
+                      "startTime": "2026-05-05T11:47:46.411Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -905,19 +982,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6006,
+                      "duration": 3354,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:49.822Z",
+                      "startTime": "2026-05-05T11:47:26.974Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -943,10 +1016,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 2282,
+                      "duration": 3410,
                       "errors": [],
                       "stdout": [
                         {
@@ -955,7 +1028,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:55.852Z",
+                      "startTime": "2026-05-05T11:47:27.098Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -981,10 +1054,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 2417,
+                      "duration": 3064,
                       "errors": [],
                       "stdout": [
                         {
@@ -993,7 +1066,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:56.012Z",
+                      "startTime": "2026-05-05T11:47:28.141Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1019,22 +1092,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2518,
+                      "duration": 3155,
                       "errors": [],
                       "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        },
                         {
                           "text": "[Xian] Playlist items visible: true\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:56.150Z",
+                      "startTime": "2026-05-05T11:47:28.492Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1059,7 +1129,7 @@
                       "type": "skip",
                       "description": "Lighthouse not available in this environment",
                       "location": {
-                        "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\sakura-xian.spec.ts",
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
                         "line": 212,
                         "column": 12
                       }
@@ -1070,10 +1140,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 5433,
+                      "duration": 2345,
                       "errors": [],
                       "stdout": [
                         {
@@ -1082,13 +1152,13 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:56.250Z",
+                      "startTime": "2026-05-05T11:47:30.383Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Lighthouse not available in this environment",
                           "location": {
-                            "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\sakura-xian.spec.ts",
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
                             "line": 212,
                             "column": 12
                           }
@@ -1118,15 +1188,15 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 2967,
+                      "duration": 5839,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:06.430Z",
+                      "startTime": "2026-05-05T11:47:46.548Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1152,10 +1222,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4052,
+                      "duration": 7698,
                       "errors": [],
                       "stdout": [
                         {
@@ -1164,7 +1234,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:07.488Z",
+                      "startTime": "2026-05-05T11:47:49.808Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1190,10 +1260,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 12,
-                      "parallelIndex": 0,
+                      "workerIndex": 4,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3511,
+                      "duration": 5012,
                       "errors": [],
                       "stdout": [
                         {
@@ -1202,7 +1272,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:08.006Z",
+                      "startTime": "2026-05-05T11:47:49.826Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1228,10 +1298,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 7,
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3366,
+                      "duration": 7451,
                       "errors": [],
                       "stdout": [
                         {
@@ -1240,7 +1310,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:08.177Z",
+                      "startTime": "2026-05-05T11:47:49.845Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1265,7 +1335,7 @@
                       "type": "skip",
                       "description": "Lighthouse not available in this environment",
                       "location": {
-                        "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\sakura-xian.spec.ts",
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
                         "line": 212,
                         "column": 12
                       }
@@ -1276,10 +1346,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 11,
+                      "workerIndex": 5,
                       "parallelIndex": 3,
                       "status": "skipped",
-                      "duration": 3875,
+                      "duration": 5568,
                       "errors": [],
                       "stdout": [
                         {
@@ -1288,13 +1358,13 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:08.806Z",
+                      "startTime": "2026-05-05T11:47:52.449Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Lighthouse not available in this environment",
                           "location": {
-                            "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\sakura-xian.spec.ts",
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
                             "line": 212,
                             "column": 12
                           }
@@ -1325,7 +1395,7 @@
         {
           "title": "The Accused — Case 1: Elena Vasquez",
           "file": "the-accused.spec.ts",
-          "line": 150,
+          "line": 153,
           "column": 6,
           "specs": [
             {
@@ -1335,31 +1405,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 2645,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:56.286Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-caf26ae6adfe6b906b74",
               "file": "the-accused.spec.ts",
-              "line": 180,
+              "line": 183,
               "column": 7
             },
             {
@@ -1369,31 +1459,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 6,
-                      "status": "passed",
-                      "duration": 20123,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:56.592Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-5b68307529be8dee1171",
               "file": "the-accused.spec.ts",
-              "line": 196,
+              "line": 199,
               "column": 7
             },
             {
@@ -1402,106 +1512,106 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 5,
-                      "status": "passed",
-                      "duration": 32380,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:56.932Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-81049838f71688e90700",
               "file": "the-accused.spec.ts",
-              "line": 214,
+              "line": 217,
               "column": 7
             },
             {
               "title": "should reach an Acquittal verdict and persist to Judge File",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 180000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "failed",
-                      "duration": 136699,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts:297:27",
-                        "location": {
-                          "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts",
-                          "column": 27,
-                          "line": 297
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 295 |\u001b[39m\n \u001b[90m 296 |\u001b[39m     \u001b[36mconst\u001b[39m elenaRecorded \u001b[33m=\u001b[39m completed\u001b[33m.\u001b[39mincludes(\u001b[32m'elena'\u001b[39m) \u001b[33m||\u001b[39m \u001b[32m'elena'\u001b[39m \u001b[36min\u001b[39m results\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 297 |\u001b[39m     expect(elenaRecorded)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 298 |\u001b[39m   })\n \u001b[90m 299 |\u001b[39m\n \u001b[90m 300 |\u001b[39m   \u001b[90m/* ── 5. Judge's File lists Elena after seeded completion ──────────────── */\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts",
-                            "column": 27,
-                            "line": 297
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 295 |\u001b[39m\n \u001b[90m 296 |\u001b[39m     \u001b[36mconst\u001b[39m elenaRecorded \u001b[33m=\u001b[39m completed\u001b[33m.\u001b[39mincludes(\u001b[32m'elena'\u001b[39m) \u001b[33m||\u001b[39m \u001b[32m'elena'\u001b[39m \u001b[36min\u001b[39m results\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 297 |\u001b[39m     expect(elenaRecorded)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 298 |\u001b[39m   })\n \u001b[90m 299 |\u001b[39m\n \u001b[90m 300 |\u001b[39m   \u001b[90m/* ── 5. Judge's File lists Elena after seeded completion ──────────────── */\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts:297:27\u001b[22m"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:57.393Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\the-accused-The-Accused-—--41977-t-and-persist-to-Judge-File-chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\the-accused-The-Accused-—--41977-t-and-persist-to-Judge-File-chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\the-accused-The-Accused-—--41977-t-and-persist-to-Judge-File-chromium\\error-context.md"
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
                         }
                       ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts",
-                        "column": 27,
-                        "line": 297
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-3b8896b235c65d2aa779",
               "file": "the-accused.spec.ts",
-              "line": 249,
+              "line": 252,
               "column": 7
             },
             {
@@ -1511,31 +1621,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2312,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:21:58.180Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-a6e01da96473ce0597d5",
               "file": "the-accused.spec.ts",
-              "line": 302,
+              "line": 305,
               "column": 7
             },
             {
@@ -1545,31 +1675,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "mobile-safari",
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3959,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:09.433Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:54.884Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-0af99680dc6cc6ddfad1",
               "file": "the-accused.spec.ts",
-              "line": 180,
+              "line": 183,
               "column": 7
             },
             {
@@ -1579,31 +1729,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "mobile-safari",
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 12,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 26637,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:11.560Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-90eb10d8e59d762537e4",
               "file": "the-accused.spec.ts",
-              "line": 196,
+              "line": 199,
               "column": 7
             },
             {
@@ -1612,106 +1782,106 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "mobile-safari",
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 7,
-                      "status": "passed",
-                      "duration": 39856,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:11.589Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-4fd89754f63291d8e6bb",
               "file": "the-accused.spec.ts",
-              "line": 214,
+              "line": 217,
               "column": 7
             },
             {
               "title": "should reach an Acquittal verdict and persist to Judge File",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 180000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "mobile-safari",
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 162829,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts:297:27",
-                        "location": {
-                          "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts",
-                          "column": 27,
-                          "line": 297
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 295 |\u001b[39m\n \u001b[90m 296 |\u001b[39m     \u001b[36mconst\u001b[39m elenaRecorded \u001b[33m=\u001b[39m completed\u001b[33m.\u001b[39mincludes(\u001b[32m'elena'\u001b[39m) \u001b[33m||\u001b[39m \u001b[32m'elena'\u001b[39m \u001b[36min\u001b[39m results\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 297 |\u001b[39m     expect(elenaRecorded)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 298 |\u001b[39m   })\n \u001b[90m 299 |\u001b[39m\n \u001b[90m 300 |\u001b[39m   \u001b[90m/* ── 5. Judge's File lists Elena after seeded completion ──────────────── */\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts",
-                            "column": 27,
-                            "line": 297
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 295 |\u001b[39m\n \u001b[90m 296 |\u001b[39m     \u001b[36mconst\u001b[39m elenaRecorded \u001b[33m=\u001b[39m completed\u001b[33m.\u001b[39mincludes(\u001b[32m'elena'\u001b[39m) \u001b[33m||\u001b[39m \u001b[32m'elena'\u001b[39m \u001b[36min\u001b[39m results\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 297 |\u001b[39m     expect(elenaRecorded)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 298 |\u001b[39m   })\n \u001b[90m 299 |\u001b[39m\n \u001b[90m 300 |\u001b[39m   \u001b[90m/* ── 5. Judge's File lists Elena after seeded completion ──────────────── */\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts:297:27\u001b[22m"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:11.592Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\the-accused-The-Accused-—--41977-t-and-persist-to-Judge-File-mobile-safari\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\the-accused-The-Accused-—--41977-t-and-persist-to-Judge-File-mobile-safari\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\test-results\\the-accused-The-Accused-—--41977-t-and-persist-to-Judge-File-mobile-safari\\error-context.md"
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
                         }
                       ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\L\\Desktop\\QA-Sakura-Solutions\\tests\\e2e\\the-accused.spec.ts",
-                        "column": 27,
-                        "line": 297
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-5ca11229e155e1797370",
               "file": "the-accused.spec.ts",
-              "line": 249,
+              "line": 252,
               "column": 7
             },
             {
@@ -1721,31 +1891,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The Accused server is local-only, skipped in CI",
+                      "location": {
+                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                        "line": 24,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "mobile-safari",
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 11,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2972,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T08:22:12.712Z",
-                      "annotations": [],
+                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "The Accused server is local-only, skipped in CI",
+                          "location": {
+                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+                            "line": 24,
+                            "column": 6
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "acf40d8128e56c2e7932-e2a1d83c7275996512e0",
               "file": "the-accused.spec.ts",
-              "line": 302,
+              "line": 305,
               "column": 7
             }
           ]
@@ -1755,11 +1945,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-05T08:21:45.439Z",
-    "duration": 191644.649,
-    "expected": 33,
-    "skipped": 3,
-    "unexpected": 2,
+    "startTime": "2026-05-05T11:47:19.849Z",
+    "duration": 38735.395,
+    "expected": 25,
+    "skipped": 13,
+    "unexpected": 0,
     "flaky": 0
   }
 }

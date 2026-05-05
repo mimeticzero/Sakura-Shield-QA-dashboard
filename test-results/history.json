@@ -1,9 +1,9 @@
 [
-  { "date": "2025-04-29", "passRate": 79, "passed": 30, "failed": 8, "total": 38 },
-  { "date": "2025-04-30", "passRate": 84, "passed": 32, "failed": 6, "total": 38 },
-  { "date": "2025-05-01", "passRate": 84, "passed": 32, "failed": 6, "total": 38 },
-  { "date": "2025-05-02", "passRate": 87, "passed": 33, "failed": 5, "total": 38 },
-  { "date": "2025-05-03", "passRate": 87, "passed": 33, "failed": 5, "total": 38 },
-  { "date": "2025-05-04", "passRate": 92, "passed": 35, "failed": 3, "total": 38 },
-  { "date": "2025-05-05", "passRate": 87, "passed": 33, "failed": 5, "total": 38 }
+  {
+    "date": "2026-05-05",
+    "passRate": 66,
+    "passed": 25,
+    "failed": 13,
+    "total": 38
+  }
 ]
