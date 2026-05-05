@@ -1,0 +1,102 @@
+name: Load Tests (k6)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: 'Test scenario'
+        required: false
+        default: 'smoke'
+        type: choice
+        options: [smoke, load, stress, soak]
+
+permissions:
+  contents: write
+
+jobs:
+  k6:
+    name: k6 ${{ github.event.inputs.scenario || 'smoke' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run smoke test
+        if: ${{ (github.event.inputs.scenario || 'smoke') == 'smoke' }}
+        run: k6 run tests/load/k6-smoke.js
+        env:
+          BASE_URL: https://sakuranode.com
+        continue-on-error: true
+
+      - name: Run load test
+        if: ${{ github.event.inputs.scenario == 'load' }}
+        run: k6 run tests/load/k6-sakura-node.js
+        env:
+          BASE_URL: https://sakuranode.com
+        continue-on-error: true
+
+      - name: Run stress test (spike)
+        if: ${{ github.event.inputs.scenario == 'stress' }}
+        run: k6 run tests/load/k6-stress.js
+        env:
+          BASE_URL:  https://sakuranode.com
+          SCENARIO:  spike
+        continue-on-error: true
+
+      - name: Run soak test
+        if: ${{ github.event.inputs.scenario == 'soak' }}
+        run: |
+          echo "Soak test: 30 min — increasing runner timeout if needed"
+          k6 run tests/load/k6-stress.js
+        env:
+          BASE_URL:  https://sakuranode.com
+          SCENARIO:  soak
+        continue-on-error: true
+
+      - name: Commit k6 summary to repo
+        if: always()
+        run: |
+          mkdir -p test-results
+          # Rename whichever summary file was produced to a stable name
+          SCENARIO="${{ github.event.inputs.scenario || 'smoke' }}"
+          SRC="test-results/k6-${SCENARIO}-summary.json"
+          # smoke script writes k6-smoke-summary.json; load script writes k6-summary.json
+          if [ ! -f "$SRC" ]; then
+            SRC="test-results/k6-summary.json"
+          fi
+          if [ ! -f "$SRC" ]; then
+            echo "No k6 summary file found — skipping commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add test-results/
+          git diff --staged --quiet && echo "nothing to commit" && exit 0
+          git commit -m "ci: update k6 ${SCENARIO} results [skip ci]"
+          git push
+
+      - name: Trigger SakuraNode dashboard sync
+        if: always()
+        run: |
+          curl -s -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.PAT_SAKURANODE }}" \
+            https://api.github.com/repos/mimeticzero/sakuranode/dispatches \
+            -d '{"event_type":"qa-results-updated"}'
+        continue-on-error: true
+
+      - name: Upload k6 summary artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: k6-results-${{ github.run_number }}
+          path: test-results/k6-*.json
+          retention-days: 30
