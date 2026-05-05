@@ -12,28 +12,27 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-        "commitHash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-        "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25376174671"
+        "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+        "commitHash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+        "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25390482242"
       },
       "gitCommit": {
-        "shortHash": "ec6cc8b",
-        "hash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-        "subject": "docs: add Sakura Rewards LCP performance finding",
-        "body": "docs: add Sakura Rewards LCP performance finding\n",
+        "shortHash": "bd3af6e",
+        "hash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+        "subject": "feat(sdet): POM architecture + pure API contract tests",
+        "body": "feat(sdet): POM architecture + pure API contract tests\n\n- Refactor all 4 E2E specs to use Page Object Model (FidelityPage,\n  RewardsPage, XianPage, TheAccusedPage) — locators and domain helpers\n  encapsulated once, tests focus on assertions only\n- Add 5 POM classes under tests/e2e/pages/ with typed interfaces and\n  barrel export (index.ts)\n- Add 3 pure API contract specs under tests/e2e/api/ (no browser):\n  health, fidelity (atomicity invariant), rewards (replay 409)\n- Register 'api' Playwright project in playwright.config.ts\n- Dashboard: API CONTRACTS card with amber accent + NO BROWSER badge\n- README: add Page Object Model and API Contract Tests sections\n",
         "author": {
           "name": "molambat",
           "email": "mimeticzero@protonmail.com",
-          "time": 1777983876000
+          "time": 1778000368000
         },
         "committer": {
           "name": "molambat",
           "email": "mimeticzero@protonmail.com",
-          "time": 1777983876000
+          "time": 1778000368000
         },
         "branch": "main"
-      },
-      "actualWorkers": 4
+      }
     },
     "preserveOutput": "always",
     "projects": [
@@ -43,33 +42,71 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "commitHash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25376174671"
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "commitHash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25390482242"
           },
           "gitCommit": {
-            "shortHash": "ec6cc8b",
-            "hash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "subject": "docs: add Sakura Rewards LCP performance finding",
-            "body": "docs: add Sakura Rewards LCP performance finding\n",
+            "shortHash": "bd3af6e",
+            "hash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "subject": "feat(sdet): POM architecture + pure API contract tests",
+            "body": "feat(sdet): POM architecture + pure API contract tests\n\n- Refactor all 4 E2E specs to use Page Object Model (FidelityPage,\n  RewardsPage, XianPage, TheAccusedPage) — locators and domain helpers\n  encapsulated once, tests focus on assertions only\n- Add 5 POM classes under tests/e2e/pages/ with typed interfaces and\n  barrel export (index.ts)\n- Add 3 pure API contract specs under tests/e2e/api/ (no browser):\n  health, fidelity (atomicity invariant), rewards (replay 409)\n- Register 'api' Playwright project in playwright.config.ts\n- Dashboard: API CONTRACTS card with amber accent + NO BROWSER badge\n- README: add Page Object Model and API Contract Tests sections\n",
             "author": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777983876000
+              "time": 1778000368000
             },
             "committer": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777983876000
+              "time": 1778000368000
             },
             "branch": "main"
+          }
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/api/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "commitHash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25390482242"
           },
-          "actualWorkers": 4
+          "gitCommit": {
+            "shortHash": "bd3af6e",
+            "hash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "subject": "feat(sdet): POM architecture + pure API contract tests",
+            "body": "feat(sdet): POM architecture + pure API contract tests\n\n- Refactor all 4 E2E specs to use Page Object Model (FidelityPage,\n  RewardsPage, XianPage, TheAccusedPage) — locators and domain helpers\n  encapsulated once, tests focus on assertions only\n- Add 5 POM classes under tests/e2e/pages/ with typed interfaces and\n  barrel export (index.ts)\n- Add 3 pure API contract specs under tests/e2e/api/ (no browser):\n  health, fidelity (atomicity invariant), rewards (replay 409)\n- Register 'api' Playwright project in playwright.config.ts\n- Dashboard: API CONTRACTS card with amber accent + NO BROWSER badge\n- README: add Page Object Model and API Contract Tests sections\n",
+            "author": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1778000368000
+            },
+            "committer": {
+              "name": "molambat",
+              "email": "mimeticzero@protonmail.com",
+              "time": 1778000368000
+            },
+            "branch": "main"
+          }
         },
         "id": "chromium",
         "name": "chromium",
         "testDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
-        "testIgnore": [],
+        "testIgnore": [
+          "**/api/**/*.spec.ts"
+        ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -81,33 +118,34 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "commitHash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25376174671"
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "commitHash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25390482242"
           },
           "gitCommit": {
-            "shortHash": "ec6cc8b",
-            "hash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "subject": "docs: add Sakura Rewards LCP performance finding",
-            "body": "docs: add Sakura Rewards LCP performance finding\n",
+            "shortHash": "bd3af6e",
+            "hash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "subject": "feat(sdet): POM architecture + pure API contract tests",
+            "body": "feat(sdet): POM architecture + pure API contract tests\n\n- Refactor all 4 E2E specs to use Page Object Model (FidelityPage,\n  RewardsPage, XianPage, TheAccusedPage) — locators and domain helpers\n  encapsulated once, tests focus on assertions only\n- Add 5 POM classes under tests/e2e/pages/ with typed interfaces and\n  barrel export (index.ts)\n- Add 3 pure API contract specs under tests/e2e/api/ (no browser):\n  health, fidelity (atomicity invariant), rewards (replay 409)\n- Register 'api' Playwright project in playwright.config.ts\n- Dashboard: API CONTRACTS card with amber accent + NO BROWSER badge\n- README: add Page Object Model and API Contract Tests sections\n",
             "author": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777983876000
+              "time": 1778000368000
             },
             "committer": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777983876000
+              "time": 1778000368000
             },
             "branch": "main"
-          },
-          "actualWorkers": 4
+          }
         },
         "id": "mobile-safari",
         "name": "mobile-safari",
         "testDir": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e",
-        "testIgnore": [],
+        "testIgnore": [
+          "**/api/**/*.spec.ts"
+        ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -119,28 +157,27 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "commitHash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25376174671"
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "commitHash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25390482242"
           },
           "gitCommit": {
-            "shortHash": "ec6cc8b",
-            "hash": "ec6cc8b8e9cf941d34d64325b913df173a7f4812",
-            "subject": "docs: add Sakura Rewards LCP performance finding",
-            "body": "docs: add Sakura Rewards LCP performance finding\n",
+            "shortHash": "bd3af6e",
+            "hash": "bd3af6ed4818f739f85f97b58f8bfe4aa8ceef22",
+            "subject": "feat(sdet): POM architecture + pure API contract tests",
+            "body": "feat(sdet): POM architecture + pure API contract tests\n\n- Refactor all 4 E2E specs to use Page Object Model (FidelityPage,\n  RewardsPage, XianPage, TheAccusedPage) — locators and domain helpers\n  encapsulated once, tests focus on assertions only\n- Add 5 POM classes under tests/e2e/pages/ with typed interfaces and\n  barrel export (index.ts)\n- Add 3 pure API contract specs under tests/e2e/api/ (no browser):\n  health, fidelity (atomicity invariant), rewards (replay 409)\n- Register 'api' Playwright project in playwright.config.ts\n- Dashboard: API CONTRACTS card with amber accent + NO BROWSER badge\n- README: add Page Object Model and API Contract Tests sections\n",
             "author": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777983876000
+              "time": 1778000368000
             },
             "committer": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777983876000
+              "time": 1778000368000
             },
             "branch": "main"
-          },
-          "actualWorkers": 4
+          }
         },
         "id": "visual",
         "name": "visual",
@@ -184,1771 +221,54 @@
     "workers": 4,
     "webServer": null
   },
-  "suites": [
+  "suites": [],
+  "errors": [
     {
-      "title": "sakura-fidelity.spec.ts",
-      "file": "sakura-fidelity.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Sakura Fidelity — Transactional Logic & Security",
-          "file": "sakura-fidelity.spec.ts",
-          "line": 99,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should load the Fidelity homepage",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3233,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:47.963Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-f12c14b7b4f92a2f984d",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 103,
-              "column": 7
-            },
-            {
-              "title": "should render the login form",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3226,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:47.953Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-8209cfdb212337b316bc",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 111,
-              "column": 7
-            },
-            {
-              "title": "should return 403 and not deduct points when balance is insufficient",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 3452,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        },
-                        {
-                          "text": "[Fidelity] Redeem buttons found: 0\n"
-                        },
-                        {
-                          "text": "[Fidelity] Unauthenticated redemption → 405\n"
-                        },
-                        {
-                          "text": "[Fidelity] Redemption attempts intercepted: []\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:47.962Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-1f59d5fd84b7d0e02c4d",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 130,
-              "column": 7
-            },
-            {
-              "title": "point balance should not change after a failed redemption attempt",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 3974,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Fidelity] Balance endpoint status (unauthenticated): 404\n"
-                        },
-                        {
-                          "text": "[Fidelity] Redemption attempt status: 405\n"
-                        },
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:47.954Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-ebd0aa05f9e7ce0bcb1e",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 203,
-              "column": 7
-            },
-            {
-              "title": "transaction history endpoint should require authentication",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1392,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:51.597Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-50a3c02cae4bc6136c3a",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 241,
-              "column": 7
-            },
-            {
-              "title": "should load the Fidelity homepage",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 15344,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:58.247Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-d9cadcb3c08651c18692",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 103,
-              "column": 7
-            },
-            {
-              "title": "should render the login form",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 15846,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:58.492Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-bc713371ca0372dafc3c",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 111,
-              "column": 7
-            },
-            {
-              "title": "should return 403 and not deduct points when balance is insufficient",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 15752,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        },
-                        {
-                          "text": "[Fidelity] Redeem buttons found: 0\n"
-                        },
-                        {
-                          "text": "[Fidelity] Unauthenticated redemption → 405\n"
-                        },
-                        {
-                          "text": "[Fidelity] Redemption attempts intercepted: []\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:58.978Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-602e65b8db33898b8773",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 130,
-              "column": 7
-            },
-            {
-              "title": "point balance should not change after a failed redemption attempt",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 16713,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Fidelity] Balance endpoint status (unauthenticated): 404\n"
-                        },
-                        {
-                          "text": "[Fidelity] Redemption attempt status: 405\n"
-                        },
-                        {
-                          "text": "[\u001b[95mpercy\u001b[39m] Percy is not running, disabling snapshots\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:59.595Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-787475a6f9718a717269",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 203,
-              "column": 7
-            },
-            {
-              "title": "transaction history endpoint should require authentication",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1447,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:14.370Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "187e5466f69d44b2efb8-beaa8369867a3d098a9c",
-              "file": "sakura-fidelity.spec.ts",
-              "line": 241,
-              "column": 7
-            }
-          ]
-        }
-      ]
+      "message": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m",
+      "stack": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/index.ts:14:1)\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-fidelity.spec.ts:20:1)",
+      "location": {
+        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-fidelity.spec.ts",
+        "line": 104,
+        "column": 7
+      },
+      "snippet": "   at sakura-fidelity.spec.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m \u001b[90m   */\u001b[39m\n \u001b[90m 103 |\u001b[39m   test(\u001b[32m'point balance should not change after a failed redemption attempt'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page\u001b[33m,\u001b[39m request }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m     \u001b[36mconst\u001b[39m fidelity \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mFidelityPage\u001b[39m(page\u001b[33m,\u001b[39m request)\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m     \u001b[90m// POM.redeemViaApi snapshots balance before AND after in a single call\u001b[39m\n \u001b[90m 107 |\u001b[39m     \u001b[36mconst\u001b[39m { httpStatus\u001b[33m,\u001b[39m balanceBefore\u001b[33m,\u001b[39m balanceAfter } \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fidelity\u001b[33m.\u001b[39mredeemViaApi(\u001b[33mTEST_EMAIL\u001b[39m\u001b[33m,\u001b[39m \u001b[35m9\u001b[39m_999)\u001b[0m"
     },
     {
-      "title": "sakura-rewards.spec.ts",
-      "file": "sakura-rewards.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Sakura Rewards — Wheel Distribution",
-          "file": "sakura-rewards.spec.ts",
-          "line": 142,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should load play page with a valid token",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3104,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:51.607Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-4ebf7a899ee1e3ca01c5",
-              "file": "sakura-rewards.spec.ts",
-              "line": 146,
-              "column": 7
-            },
-            {
-              "title": "should render the spin wheel component",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1747,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Rewards] Wheel element visible: false\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:51.810Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-7c0510e812d88614443f",
-              "file": "sakura-rewards.spec.ts",
-              "line": 155,
-              "column": 7
-            },
-            {
-              "title": "spin wheel 50 times and log JSON results",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 1661,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Rewards] Results saved to: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/rewards-spin-results.json\n"
-                        },
-                        {
-                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'30.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'36.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'6.0%'\u001b[39m,\n  Merci: \u001b[32m'8.0%'\u001b[39m\n}\n"
-                        },
-                        {
-                          "text": "[Rewards] Chi-square passed: \u001b[33mtrue\u001b[39m\n"
-                        }
-                      ],
-                      "stderr": [
-                        {
-                          "text": "[Rewards] Spin button not found — logging mock data for demo purposes\n"
-                        }
-                      ],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:52.333Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-c296f43f98c85f56f1fb",
-              "file": "sakura-rewards.spec.ts",
-              "line": 171,
-              "column": 7
-            },
-            {
-              "title": "should validate spin distribution matches configured probabilities",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Run \"spin 50 times\" test first to generate results file",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-rewards.spec.ts",
-                        "line": 258,
-                        "column": 12
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 1,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:53.014Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Run \"spin 50 times\" test first to generate results file",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-rewards.spec.ts",
-                            "line": 258,
-                            "column": 12
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-8bc1e707a4a585d56b80",
-              "file": "sakura-rewards.spec.ts",
-              "line": 256,
-              "column": 7
-            },
-            {
-              "title": "should load play page with a valid token",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3092,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:14.953Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-71c25935fda4a2ab30d5",
-              "file": "sakura-rewards.spec.ts",
-              "line": 146,
-              "column": 7
-            },
-            {
-              "title": "should render the spin wheel component",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 3249,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Rewards] Wheel element visible: false\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:14.993Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-fece9dc5fa360842feb1",
-              "file": "sakura-rewards.spec.ts",
-              "line": 155,
-              "column": 7
-            },
-            {
-              "title": "spin wheel 50 times and log JSON results",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3139,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Rewards] Results saved to: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/rewards-spin-results.json\n"
-                        },
-                        {
-                          "text": "[Rewards] Distribution: {\n  Jackpot: \u001b[32m'4.0%'\u001b[39m,\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'36.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'6.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'28.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'10.0%'\u001b[39m,\n  Merci: \u001b[32m'8.0%'\u001b[39m\n}\n"
-                        },
-                        {
-                          "text": "[Rewards] Chi-square passed: \u001b[33mtrue\u001b[39m\n"
-                        }
-                      ],
-                      "stderr": [
-                        {
-                          "text": "[Rewards] Spin button not found — logging mock data for demo purposes\n"
-                        }
-                      ],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:15.941Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-5d1eb792fa30d2702d8b",
-              "file": "sakura-rewards.spec.ts",
-              "line": 171,
-              "column": 7
-            },
-            {
-              "title": "should validate spin distribution matches configured probabilities",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 17,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Rewards] Validating distribution...\n"
-                        },
-                        {
-                          "text": "{\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'30.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'36.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'6.0%'\u001b[39m,\n  Merci: \u001b[32m'8.0%'\u001b[39m\n}\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:16.493Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "67978d4e7ba216c0faaa-5a3d0647e3bc77d30f3e",
-              "file": "sakura-rewards.spec.ts",
-              "line": 256,
-              "column": 7
-            }
-          ]
-        }
-      ]
+      "message": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m",
+      "stack": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/index.ts:14:1)\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-rewards.spec.ts:21:1)",
+      "location": {
+        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-rewards.spec.ts",
+        "line": 104,
+        "column": 7
+      },
+      "snippet": "   at sakura-rewards.spec.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m         \u001b[36mconst\u001b[39m label \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m rewards\u001b[33m.\u001b[39mspin()\n \u001b[90m 103 |\u001b[39m         results\u001b[33m.\u001b[39mpush({ index\u001b[33m:\u001b[39m i \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m,\u001b[39m timestamp\u001b[33m:\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mDate\u001b[39m()\u001b[33m.\u001b[39mtoISOString() })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m`[Rewards] Spin ${i + 1}/${SPIN_COUNT}: ${label}`\u001b[39m)\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m         \u001b[36mif\u001b[39m (i \u001b[33m===\u001b[39m \u001b[35m9\u001b[39m \u001b[33m||\u001b[39m i \u001b[33m===\u001b[39m \u001b[35m24\u001b[39m \u001b[33m||\u001b[39m i \u001b[33m===\u001b[39m \u001b[35m49\u001b[39m) {\n \u001b[90m 107 |\u001b[39m           \u001b[36mawait\u001b[39m percySnapshot(page\u001b[33m,\u001b[39m \u001b[32m`Sakura Rewards — After Spin ${i + 1}`\u001b[39m)\u001b[0m"
     },
     {
-      "title": "sakura-xian.spec.ts",
-      "file": "sakura-xian.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Sakura Xian — Jukebox",
-          "file": "sakura-xian.spec.ts",
-          "line": 70,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should load the Xian homepage with status 200",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3793,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:53.032Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-509918e242554ca70060",
-              "file": "sakura-xian.spec.ts",
-              "line": 74,
-              "column": 7
-            },
-            {
-              "title": "should serve all audio tracks with HTTP 200",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 3064,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Audio requests intercepted: 0\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:53.580Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-3fa73c5602b6415b08e4",
-              "file": "sakura-xian.spec.ts",
-              "line": 82,
-              "column": 7
-            },
-            {
-              "title": "should change track and fire a new audio request",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 3239,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Track changed: false, URL: \n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:54.043Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-44b1588677c5a2d3d94b",
-              "file": "sakura-xian.spec.ts",
-              "line": 128,
-              "column": 7
-            },
-            {
-              "title": "should display playlist items in the UI",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3191,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Playlist items visible: true\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:54.797Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-7d699b2d84ec6acb4207",
-              "file": "sakura-xian.spec.ts",
-              "line": 181,
-              "column": 7
-            },
-            {
-              "title": "should meet Lighthouse performance budget",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Lighthouse not available in this environment",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
-                        "line": 212,
-                        "column": 12
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 2192,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Lighthouse metrics: { performance: \u001b[33m0\u001b[39m, fcp: \u001b[33m0\u001b[39m, lcp: \u001b[33m0\u001b[39m, tti: \u001b[33m0\u001b[39m }\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:56.709Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Lighthouse not available in this environment",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
-                            "line": 212,
-                            "column": 12
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "e9418997956cea679844-746e39b25c2370993214",
-              "file": "sakura-xian.spec.ts",
-              "line": 202,
-              "column": 7
-            },
-            {
-              "title": "should load the Xian homepage with status 200",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 8259,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:16.557Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-3b7977d6fac7ffea9015",
-              "file": "sakura-xian.spec.ts",
-              "line": 74,
-              "column": 7
-            },
-            {
-              "title": "should serve all audio tracks with HTTP 200",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 8788,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Audio requests intercepted: 0\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:18.137Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-1d093e9b2b715bd88b69",
-              "file": "sakura-xian.spec.ts",
-              "line": 82,
-              "column": 7
-            },
-            {
-              "title": "should change track and fire a new audio request",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 8591,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Track changed: false, URL: \n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:18.310Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-910a0bbace843b5f6b3f",
-              "file": "sakura-xian.spec.ts",
-              "line": 128,
-              "column": 7
-            },
-            {
-              "title": "should display playlist items in the UI",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 8603,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Playlist items visible: true\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:19.164Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e9418997956cea679844-1fcfa1e43eeeda539ecd",
-              "file": "sakura-xian.spec.ts",
-              "line": 181,
-              "column": 7
-            },
-            {
-              "title": "should meet Lighthouse performance budget",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Lighthouse not available in this environment",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
-                        "line": 212,
-                        "column": 12
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 4069,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[Xian] Lighthouse metrics: { performance: \u001b[33m0\u001b[39m, fcp: \u001b[33m0\u001b[39m, lcp: \u001b[33m0\u001b[39m, tti: \u001b[33m0\u001b[39m }\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:24.919Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Lighthouse not available in this environment",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
-                            "line": 212,
-                            "column": 12
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "e9418997956cea679844-58450a1980d94b759c8b",
-              "file": "sakura-xian.spec.ts",
-              "line": 202,
-              "column": 7
-            }
-          ]
-        }
-      ]
+      "message": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m",
+      "stack": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/index.ts:14:1)\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts:20:1)",
+      "location": {
+        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/sakura-xian.spec.ts",
+        "line": 104,
+        "column": 7
+      },
+      "snippet": "   at sakura-xian.spec.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m     \u001b[36mawait\u001b[39m xian\u001b[33m.\u001b[39mgoto()\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m xian\u001b[33m.\u001b[39mplayBtn()\u001b[33m.\u001b[39mcount()) {\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m       \u001b[36mawait\u001b[39m xian\u001b[33m.\u001b[39mplayBtn()\u001b[33m.\u001b[39mclick()\n \u001b[90m 106 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m1500\u001b[39m)\n \u001b[90m 107 |\u001b[39m     }\u001b[0m"
     },
     {
-      "title": "the-accused.spec.ts",
-      "file": "the-accused.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "The Accused — Case 1: Elena Vasquez",
-          "file": "the-accused.spec.ts",
-          "line": 153,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should display Case 1 (Elena) on the select screen",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:56.872Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-caf26ae6adfe6b906b74",
-              "file": "the-accused.spec.ts",
-              "line": 183,
-              "column": 7
-            },
-            {
-              "title": "should launch Case 1 and reach Round 1 argument selection",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:56.872Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-5b68307529be8dee1171",
-              "file": "the-accused.spec.ts",
-              "line": 199,
-              "column": 7
-            },
-            {
-              "title": "should update Tension Gauge after Round 1 argument A is selected",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:56.872Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-81049838f71688e90700",
-              "file": "the-accused.spec.ts",
-              "line": 217,
-              "column": 7
-            },
-            {
-              "title": "should reach an Acquittal verdict and persist to Judge File",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:56.872Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-3b8896b235c65d2aa779",
-              "file": "the-accused.spec.ts",
-              "line": 252,
-              "column": 7
-            },
-            {
-              "title": "Judge's File should list Elena Vasquez after case completion",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:25:56.872Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-a6e01da96473ce0597d5",
-              "file": "the-accused.spec.ts",
-              "line": 305,
-              "column": 7
-            },
-            {
-              "title": "should display Case 1 (Elena) on the select screen",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:26.922Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-0af99680dc6cc6ddfad1",
-              "file": "the-accused.spec.ts",
-              "line": 183,
-              "column": 7
-            },
-            {
-              "title": "should launch Case 1 and reach Round 1 argument selection",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:26.922Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-90eb10d8e59d762537e4",
-              "file": "the-accused.spec.ts",
-              "line": 199,
-              "column": 7
-            },
-            {
-              "title": "should update Tension Gauge after Round 1 argument A is selected",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:26.922Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-4fd89754f63291d8e6bb",
-              "file": "the-accused.spec.ts",
-              "line": 217,
-              "column": 7
-            },
-            {
-              "title": "should reach an Acquittal verdict and persist to Judge File",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:26.922Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-5ca11229e155e1797370",
-              "file": "the-accused.spec.ts",
-              "line": 252,
-              "column": 7
-            },
-            {
-              "title": "Judge's File should list Elena Vasquez after case completion",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "The Accused server is local-only, skipped in CI",
-                      "location": {
-                        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                        "line": 24,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "mobile-safari",
-                  "projectName": "mobile-safari",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-05T12:26:26.922Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "The Accused server is local-only, skipped in CI",
-                          "location": {
-                            "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
-                            "line": 24,
-                            "column": 6
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "acf40d8128e56c2e7932-e2a1d83c7275996512e0",
-              "file": "the-accused.spec.ts",
-              "line": 305,
-              "column": 7
-            }
-          ]
-        }
-      ]
+      "message": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m",
+      "stack": "SyntaxError: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/TheAccusedPage.ts: Unexpected token (104:7)\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   \u001b[90m// ── Argument ──────────────────────────────────────────────────────────\u001b[39m\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   type \u001b[33mArgumentKey\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'A'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'B'\u001b[39m \u001b[33m|\u001b[39m \u001b[32m'C'\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m/**\u001b[39m\n \u001b[90m 107 |\u001b[39m \u001b[90m   * Choose an argument and wait for the game state to update.\u001b[39m\u001b[0m\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/pages/index.ts:14:1)\n    at Object.<anonymous> (/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts:25:1)",
+      "location": {
+        "file": "/home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/tests/e2e/the-accused.spec.ts",
+        "line": 104,
+        "column": 7
+      },
+      "snippet": "   at the-accused.spec.ts:104\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   })\n \u001b[90m 103 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     test\u001b[33m.\u001b[39mskip(\u001b[33m!\u001b[39mserverOnline\u001b[33m,\u001b[39m \u001b[32m`The Accused not running at ${BASE_URL}`\u001b[39m)\n \u001b[90m 106 |\u001b[39m     \u001b[36mconst\u001b[39m accused \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mTheAccusedPage\u001b[39m(page)\n \u001b[90m 107 |\u001b[39m     \u001b[36mawait\u001b[39m accused\u001b[33m.\u001b[39mgoto()\u001b[0m"
     }
   ],
-  "errors": [],
   "stats": {
-    "startTime": "2026-05-05T12:25:46.874Z",
-    "duration": 42296.098,
-    "expected": 25,
-    "skipped": 13,
+    "startTime": "2026-05-05T17:04:55.567Z",
+    "duration": 381.164,
+    "expected": 0,
+    "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   }

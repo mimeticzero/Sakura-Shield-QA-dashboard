@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-05-05",
-    "passRate": 66,
-    "passed": 25,
-    "failed": 13,
-    "total": 38
+    "passRate": 0,
+    "passed": 0,
+    "failed": 0,
+    "total": 0
   }
 ]
