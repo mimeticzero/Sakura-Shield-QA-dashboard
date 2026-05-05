@@ -55,6 +55,7 @@ jobs:
           REWARDS_TEST_TOKEN:   ${{ secrets.REWARDS_TEST_TOKEN }}
           XIAN_URL:             ${{ secrets.XIAN_URL }}
           THE_ACCUSED_URL:      ${{ secrets.THE_ACCUSED_URL }}
+          PERCY_TOKEN:          ${{ secrets.PERCY_TOKEN }}
 
       - name: Update history.json
         if: always()

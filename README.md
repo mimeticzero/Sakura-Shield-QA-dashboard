@@ -49,7 +49,7 @@
 | [Sakura Fidelity](https://sakurafidelity.com) | B2B loyalty SaaS | E2E · Security · Visual |
 | [Sakura Rewards](https://sakurarewards.com) | Wheel reward system | E2E · Distribution · Visual |
 | [Sakura Xian](https://sakuraxian.com) | Interactive jukebox | E2E · Network · Lighthouse |
-| [The Accused](https://theaccused.skolvex.com) | Narrative courtroom game | E2E · State · Visual |
+| [The Accused](https://skolvex.com) | Narrative courtroom game | E2E · State · Visual |
 
 ---
 
