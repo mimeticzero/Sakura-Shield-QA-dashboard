@@ -101,8 +101,6 @@ export class TheAccusedPage extends BasePage {
 
   // ── Argument ──────────────────────────────────────────────────────────
 
-  type ArgumentKey = 'A' | 'B' | 'C'
-
   /**
    * Choose an argument and wait for the game state to update.
    * FR: Choisit un argument et attend la mise à jour de l'état du jeu.
