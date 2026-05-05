@@ -220,6 +220,27 @@ npm run test:load:stress -- -e SCENARIO=soak
 
 ---
 
+## Performance Findings
+
+### Bug — Sakura Rewards: Critical LCP regression (66/100)
+
+Lighthouse audit run on 2026-05-05 revealed a severe performance degradation on Sakura Rewards:
+
+| Metric | Sakura Node | Sakura Xian | Sakura Fidelity | **Sakura Rewards** |
+|--------|------------|-------------|-----------------|-------------------|
+| Performance | 100 | 97 | 94 | **66** |
+| FCP | 826ms | 950ms | 1 131ms | **1 748ms** |
+| LCP | 1 706ms | 2 473ms | 3 041ms | **14 900ms** |
+| TTI | 2 348ms | 7 659ms | 3 041ms | **14 900ms** |
+
+**Root cause (identified):** LCP and TTI both stall at 14.9s, indicating a render-blocking resource (likely an unoptimized image, a large JS bundle, or a third-party script freezing the main thread). The other three projects perform normally under identical test conditions, isolating the regression to Sakura Rewards specifically.
+
+**Status:** Reported. Fix pending (image lazy-loading + bundle split).
+
+> This finding demonstrates the value of systematic cross-project Lighthouse runs — the issue was invisible in manual testing due to local cache warming.
+
+---
+
 ## Security
 
 ### OWASP ZAP Results
