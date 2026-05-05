@@ -69,6 +69,16 @@ interface GitContext {
   date:     string
 }
 
+interface A11yAppResult {
+  app:      string
+  url:      string
+  scanAt:   string
+  critical: number
+  serious:  number
+  moderate: number
+  minor:    number
+}
+
 /* ── Animated Counter ────────────────────────────────────────────────────── */
 
 function AnimatedNumber({ value, suffix = '' }: { value: number; suffix?: string }) {
@@ -225,6 +235,7 @@ export default function EngineeringDashboard() {
   const [lhProject,      setLhProject]      = useState('sakura-xian')
   const [history,        setHistory]        = useState<HistoryPoint[]>([])
   const [gitCtx,         setGitCtx]         = useState<GitContext | null>(null)
+  const [a11yResults,    setA11yResults]    = useState<A11yAppResult[]>([])
   const [resultsLoading, setResultsLoading] = useState(true)
   const [lang,           setLang]           = useState<'en' | 'fr'>('en')
   const [now,            setNow]            = useState(Date.now())
@@ -254,6 +265,7 @@ export default function EngineeringDashboard() {
     fetch('/api/lighthouse-results',{ cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(d => { if (d && Object.keys(d).length) setLhAllData(d) }).catch(() => {})
     fetch('/api/test-history',      { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(d => { if (d?.length) setHistory(d) }).catch(() => {})
     fetch('/api/git-context',       { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(d => { if (d) setGitCtx(d) }).catch(() => {})
+    fetch('/api/a11y-results',      { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(d => { if (d?.length) setA11yResults(d) }).catch(() => {})
   }, [])
 
   /* ── Health checks ── */
@@ -440,6 +452,16 @@ export default function EngineeringDashboard() {
       ci_tip:         'GitHub Actions E2E workflow — triggered on every push to main. Runs Playwright across Chromium and WebKit.',
       commit_label:    'LATEST COMMIT',
       quality_section: 'CI & QUALITY',
+      a11y_section:    'ACCESSIBILITY',
+      a11y_section_tip:'axe-core WCAG 2.1 AA scan on each app — critical and serious violations cause test failure. Moderate and minor are logged as warnings.',
+      a11y_badge_pass: 'WCAG 2.1 AA · NO VIOLATIONS',
+      a11y_badge_warn: 'WCAG 2.1 AA · WARNINGS',
+      a11y_no_data:    'No scan yet — run: npm run test:e2e',
+      a11y_critical:   'CRITICAL',
+      a11y_serious:    'SERIOUS',
+      a11y_moderate:   'MODERATE',
+      a11y_minor:      'MINOR',
+      a11y_scanned:    'Scanned',
       api_section:     'API CONTRACTS',
       api_section_tip: 'Pure HTTP contract tests — no browser. Validates status codes, response schemas, atomicity invariants and replay protection across all Sakura APIs.',
       api_contracts: [
@@ -518,6 +540,16 @@ export default function EngineeringDashboard() {
       ci_tip:         'Workflow GitHub Actions E2E — déclenché à chaque push sur main. Lance Playwright sur Chromium et WebKit.',
       commit_label:    'DERNIER COMMIT',
       quality_section: 'CI & QUALITÉ',
+      a11y_section:    'ACCESSIBILITÉ',
+      a11y_section_tip:'Scan axe-core WCAG 2.1 AA sur chaque app — les violations critiques et sérieuses font échouer le test. Les modérées et mineures sont journalisées.',
+      a11y_badge_pass: 'WCAG 2.1 AA · AUCUNE VIOLATION',
+      a11y_badge_warn: 'WCAG 2.1 AA · AVERTISSEMENTS',
+      a11y_no_data:    'Aucun scan — lancez : npm run test:e2e',
+      a11y_critical:   'CRITIQUE',
+      a11y_serious:    'SÉRIEUX',
+      a11y_moderate:   'MODÉRÉ',
+      a11y_minor:      'MINEUR',
+      a11y_scanned:    'Scanné',
       api_section:     'CONTRATS API',
       api_section_tip: 'Tests de contrat HTTP purs — sans navigateur. Valide codes de statut, schémas de réponse, invariants d\'atomicité et protection anti-rejeu sur toutes les APIs Sakura.',
       api_contracts: [
@@ -866,9 +898,24 @@ export default function EngineeringDashboard() {
           >
             <h2 style={{ fontSize: '12px', letterSpacing: '4px', color: '#00f5ff', marginBottom: '20px' }}>{tr.quality_section}</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div title={tr.k6_tip} style={{ padding: '16px', background: 'rgba(0,245,255,0.05)', border: '1px solid rgba(0,245,255,0.2)', borderRadius: '2px', cursor: 'help', textAlign: 'center' }}>
-                <div style={{ fontSize: '12px', color: '#64748b', letterSpacing: '2px', marginBottom: '8px' }}>{tr.k6_label}</div>
-                <div style={{ fontSize: '13px', color: '#00f5ff', fontFamily: 'Orbitron, sans-serif', fontWeight: 700 }}>{tr.k6_badge}</div>
+              <div title={tr.k6_tip} style={{ padding: '16px', background: 'rgba(0,245,255,0.05)', border: `1px solid ${loadSummary?.passed === false ? 'rgba(255,45,120,0.3)' : 'rgba(0,245,255,0.2)'}`, borderRadius: '2px', cursor: 'help', textAlign: 'center' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', letterSpacing: '2px', marginBottom: '8px' }}>
+                  {tr.k6_label}{loadSummary?.scenario ? ` · ${loadSummary.scenario.toUpperCase()}` : ''}
+                </div>
+                {loadSummary?.p95 != null ? (
+                  <>
+                    <div style={{ fontSize: '13px', color: loadSummary.passed === false ? '#ff2d78' : '#00f5ff', fontFamily: 'Orbitron, sans-serif', fontWeight: 700 }}>
+                      p95 {loadSummary.p95}ms · {loadSummary.failRate?.toFixed(1) ?? 0}% err
+                    </div>
+                    {loadSummary.passed != null && (
+                      <div style={{ fontSize: '11px', letterSpacing: '2px', marginTop: '6px', color: loadSummary.passed ? '#00f5ff' : '#ff2d78' }}>
+                        {loadSummary.passed ? '✓ ALL THRESHOLDS PASS' : '✗ THRESHOLD BREACH'}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div style={{ fontSize: '13px', color: '#00f5ff', fontFamily: 'Orbitron, sans-serif', fontWeight: 700 }}>{tr.k6_badge}</div>
+                )}
               </div>
               <div title={tr.ci_tip} style={{ padding: '16px', background: 'rgba(0,245,255,0.05)', border: '1px solid rgba(0,245,255,0.2)', borderRadius: '2px', cursor: 'help', textAlign: 'center' }}>
                 <div style={{ fontSize: '12px', color: '#64748b', letterSpacing: '2px', marginBottom: '8px' }}>GITHUB ACTIONS</div>
@@ -921,6 +968,60 @@ export default function EngineeringDashboard() {
               </div>
             ))}
           </div>
+        </motion.section>
+
+        {/* ── A11Y Results ── */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.74 }}
+          style={{ marginTop: '24px', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(0,245,255,0.15)', borderTop: '2px solid #00f5ff', padding: '24px', borderRadius: '2px' }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', flexWrap: 'wrap', gap: '8px' }}>
+            <h2 title={tr.a11y_section_tip} style={{ fontSize: '12px', letterSpacing: '4px', color: '#00f5ff', cursor: 'help' }}>{tr.a11y_section}</h2>
+            <span style={{ fontSize: '11px', letterSpacing: '2px', color: '#00f5ff', border: '1px solid rgba(0,245,255,0.3)', padding: '3px 10px', borderRadius: '2px', opacity: 0.8 }}>
+              axe-core · WCAG 2.1 AA
+            </span>
+          </div>
+
+          {a11yResults.length === 0 ? (
+            <p style={{ fontSize: '12px', color: '#64748b', letterSpacing: '2px', fontStyle: 'italic' }}>{tr.a11y_no_data}</p>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '12px' }}>
+              {a11yResults.map((r) => {
+                const hasIssues  = r.critical + r.serious > 0
+                const hasWarnings = r.moderate + r.minor > 0
+                const appColor   = hasIssues ? '#ff2d78' : hasWarnings ? '#f59e0b' : '#00f5ff'
+                const appName    = r.app.replace('sakura-', 'Sakura ').replace(/\b\w/g, c => c.toUpperCase())
+                return (
+                  <div key={r.app} style={{ background: `rgba(0,0,0,0.35)`, border: `1px solid ${appColor}33`, borderTop: `2px solid ${appColor}`, padding: '16px', borderRadius: '2px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                      <span style={{ fontSize: '12px', letterSpacing: '2px', color: appColor, fontWeight: 700 }}>{appName}</span>
+                      <span style={{ fontSize: '10px', letterSpacing: '1px', color: appColor, border: `1px solid ${appColor}44`, padding: '2px 6px', borderRadius: '2px' }}>
+                        {hasIssues ? 'FAIL' : hasWarnings ? 'WARN' : 'PASS'}
+                      </span>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
+                      {[
+                        { label: tr.a11y_critical, value: r.critical, color: r.critical > 0 ? '#ff2d78' : '#334155' },
+                        { label: tr.a11y_serious,  value: r.serious,  color: r.serious  > 0 ? '#ff2d78' : '#334155' },
+                        { label: tr.a11y_moderate, value: r.moderate, color: r.moderate > 0 ? '#f59e0b' : '#334155' },
+                        { label: tr.a11y_minor,    value: r.minor,    color: r.minor    > 0 ? '#64748b' : '#334155' },
+                      ].map(stat => (
+                        <div key={stat.label} style={{ background: 'rgba(0,0,0,0.3)', padding: '8px', borderRadius: '2px', textAlign: 'center' }}>
+                          <div style={{ fontSize: '10px', letterSpacing: '1px', color: '#64748b', marginBottom: '2px' }}>{stat.label}</div>
+                          <div style={{ fontSize: '18px', fontFamily: 'Orbitron, sans-serif', color: stat.color, fontWeight: 700 }}>{stat.value}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{ marginTop: '10px', fontSize: '11px', color: '#334155', letterSpacing: '1px' }}>
+                      {tr.a11y_scanned}: {new Date(r.scanAt).toLocaleDateString()}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </motion.section>
 
         {/* ── Latest test runs table ── */}

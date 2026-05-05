@@ -107,7 +107,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add test-results/results.json test-results/history.json
+          git add test-results/results.json test-results/history.json test-results/a11y-results.json 2>/dev/null || true
           git diff --staged --quiet && echo "nothing to commit" && exit 0
           git commit -m "ci: update test results [skip ci]"
           git push
