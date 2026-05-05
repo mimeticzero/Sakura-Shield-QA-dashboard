@@ -12,24 +12,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
-        "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-        "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+        "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+        "commitHash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+        "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25374759863"
       },
       "gitCommit": {
-        "shortHash": "4524850",
-        "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-        "subject": "fix: remove rebase.",
-        "body": "fix: remove rebase.\n",
+        "shortHash": "7db3a6a",
+        "hash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+        "subject": "ci: cache Playwright browsers",
+        "body": "ci: cache Playwright browsers\n",
         "author": {
           "name": "molambat",
           "email": "mimeticzero@protonmail.com",
-          "time": 1777980881000
+          "time": 1777981962000
         },
         "committer": {
           "name": "molambat",
           "email": "mimeticzero@protonmail.com",
-          "time": 1777980881000
+          "time": 1777981992000
         },
         "branch": "main"
       },
@@ -43,24 +43,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
-            "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "commitHash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25374759863"
           },
           "gitCommit": {
-            "shortHash": "4524850",
-            "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-            "subject": "fix: remove rebase.",
-            "body": "fix: remove rebase.\n",
+            "shortHash": "7db3a6a",
+            "hash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "subject": "ci: cache Playwright browsers",
+            "body": "ci: cache Playwright browsers\n",
             "author": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777980881000
+              "time": 1777981962000
             },
             "committer": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777980881000
+              "time": 1777981992000
             },
             "branch": "main"
           },
@@ -81,24 +81,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
-            "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "commitHash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25374759863"
           },
           "gitCommit": {
-            "shortHash": "4524850",
-            "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-            "subject": "fix: remove rebase.",
-            "body": "fix: remove rebase.\n",
+            "shortHash": "7db3a6a",
+            "hash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "subject": "ci: cache Playwright browsers",
+            "body": "ci: cache Playwright browsers\n",
             "author": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777980881000
+              "time": 1777981962000
             },
             "committer": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777980881000
+              "time": 1777981992000
             },
             "branch": "main"
           },
@@ -119,24 +119,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/45248507d8763f6fd69f321c9a2fdb642c421064",
-            "commitHash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25373946898"
+            "commitHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/commit/7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "commitHash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "buildHref": "https://github.com/mimeticzero/Sakura-Shield-QA-dashboard/actions/runs/25374759863"
           },
           "gitCommit": {
-            "shortHash": "4524850",
-            "hash": "45248507d8763f6fd69f321c9a2fdb642c421064",
-            "subject": "fix: remove rebase.",
-            "body": "fix: remove rebase.\n",
+            "shortHash": "7db3a6a",
+            "hash": "7db3a6a53a4ddf8905d26fe6a7ae04c3fa861b42",
+            "subject": "ci: cache Playwright browsers",
+            "body": "ci: cache Playwright browsers\n",
             "author": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777980881000
+              "time": 1777981962000
             },
             "committer": {
               "name": "molambat",
               "email": "mimeticzero@protonmail.com",
-              "time": 1777980881000
+              "time": 1777981992000
             },
             "branch": "main"
           },
@@ -214,7 +214,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2727,
+                      "duration": 3194,
                       "errors": [],
                       "stdout": [
                         {
@@ -223,7 +223,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:20.998Z",
+                      "startTime": "2026-05-05T11:54:50.176Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -252,7 +252,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4407,
+                      "duration": 3153,
                       "errors": [],
                       "stdout": [
                         {
@@ -261,7 +261,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:20.969Z",
+                      "startTime": "2026-05-05T11:54:50.099Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -290,7 +290,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3341,
+                      "duration": 3466,
                       "errors": [],
                       "stdout": [
                         {
@@ -308,7 +308,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:20.941Z",
+                      "startTime": "2026-05-05T11:54:50.110Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -337,7 +337,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 3187,
+                      "duration": 3799,
                       "errors": [],
                       "stdout": [
                         {
@@ -352,7 +352,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:20.954Z",
+                      "startTime": "2026-05-05T11:54:50.100Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -378,15 +378,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1385,
+                      "duration": 1493,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:25.264Z",
+                      "startTime": "2026-05-05T11:54:53.827Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -415,7 +415,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 12239,
+                      "duration": 3924,
                       "errors": [],
                       "stdout": [
                         {
@@ -424,7 +424,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:31.992Z",
+                      "startTime": "2026-05-05T11:55:00.500Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -451,9 +451,9 @@
                   "results": [
                     {
                       "workerIndex": 5,
-                      "parallelIndex": 3,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11900,
+                      "duration": 4152,
                       "errors": [],
                       "stdout": [
                         {
@@ -462,7 +462,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:32.412Z",
+                      "startTime": "2026-05-05T11:55:00.759Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -489,9 +489,9 @@
                   "results": [
                     {
                       "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 12452,
+                      "duration": 4469,
                       "errors": [],
                       "stdout": [
                         {
@@ -509,7 +509,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:32.700Z",
+                      "startTime": "2026-05-05T11:55:01.144Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -538,7 +538,7 @@
                       "workerIndex": 7,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 12149,
+                      "duration": 4584,
                       "errors": [],
                       "stdout": [
                         {
@@ -553,7 +553,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:33.570Z",
+                      "startTime": "2026-05-05T11:55:02.413Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -579,15 +579,15 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
+                      "workerIndex": 4,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1244,
+                      "duration": 1033,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:45.091Z",
+                      "startTime": "2026-05-05T11:55:05.468Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -630,15 +630,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2355,
+                      "duration": 1584,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:25.744Z",
+                      "startTime": "2026-05-05T11:54:53.881Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -667,7 +667,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1188,
+                      "duration": 1398,
                       "errors": [],
                       "stdout": [
                         {
@@ -676,7 +676,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:25.886Z",
+                      "startTime": "2026-05-05T11:54:54.134Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -702,17 +702,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1767,
+                      "duration": 2550,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "[Rewards] Results saved to: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/rewards-spin-results.json\n"
                         },
                         {
-                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  Jackpot: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m\n}\n"
+                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'20.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'6.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m\n}\n"
                         },
                         {
                           "text": "[Rewards] Chi-square passed: \u001b[33mtrue\u001b[39m\n"
@@ -724,7 +724,7 @@
                         }
                       ],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:26.673Z",
+                      "startTime": "2026-05-05T11:54:54.486Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -768,7 +768,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:26.942Z",
+                      "startTime": "2026-05-05T11:54:55.360Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -804,15 +804,15 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 2,
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4304,
+                      "duration": 3811,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:45.413Z",
+                      "startTime": "2026-05-05T11:55:05.726Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -839,9 +839,9 @@
                   "results": [
                     {
                       "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 3931,
+                      "duration": 4012,
                       "errors": [],
                       "stdout": [
                         {
@@ -850,7 +850,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:45.840Z",
+                      "startTime": "2026-05-05T11:55:06.305Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -876,17 +876,17 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 1,
+                      "workerIndex": 4,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3722,
+                      "duration": 3664,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "[Rewards] Results saved to: /home/runner/work/Sakura-Shield-QA-dashboard/Sakura-Shield-QA-dashboard/test-results/rewards-spin-results.json\n"
                         },
                         {
-                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'4.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'14.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'36.0%'\u001b[39m,\n  Merci: \u001b[32m'6.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'14.0%'\u001b[39m,\n  Jackpot: \u001b[32m'4.0%'\u001b[39m\n}\n"
+                          "text": "[Rewards] Distribution: {\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'28.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'18.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'24.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'14.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'2.0%'\u001b[39m,\n  Jackpot: \u001b[32m'2.0%'\u001b[39m\n}\n"
                         },
                         {
                           "text": "[Rewards] Chi-square passed: \u001b[33mtrue\u001b[39m\n"
@@ -898,7 +898,7 @@
                         }
                       ],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:45.904Z",
+                      "startTime": "2026-05-05T11:55:06.614Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -924,22 +924,22 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 60,
+                      "duration": 49,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "[Rewards] Validating distribution...\n"
                         },
                         {
-                          "text": "{\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  Jackpot: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'2.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m\n}\n"
+                          "text": "{\n  \u001b[32m'5% OFF'\u001b[39m: \u001b[32m'32.0%'\u001b[39m,\n  \u001b[32m'10% OFF'\u001b[39m: \u001b[32m'22.0%'\u001b[39m,\n  \u001b[32m'20% OFF'\u001b[39m: \u001b[32m'20.0%'\u001b[39m,\n  \u001b[32m'Free Coffee'\u001b[39m: \u001b[32m'8.0%'\u001b[39m,\n  \u001b[32m'Lucky Draw'\u001b[39m: \u001b[32m'6.0%'\u001b[39m,\n  Merci: \u001b[32m'12.0%'\u001b[39m\n}\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:46.411Z",
+                      "startTime": "2026-05-05T11:55:07.159Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -985,12 +985,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3354,
+                      "duration": 3586,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:26.974Z",
+                      "startTime": "2026-05-05T11:54:55.384Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1016,10 +1016,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3410,
+                      "duration": 3884,
                       "errors": [],
                       "stdout": [
                         {
@@ -1028,7 +1028,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:27.098Z",
+                      "startTime": "2026-05-05T11:54:55.498Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1054,10 +1054,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3064,
+                      "duration": 3584,
                       "errors": [],
                       "stdout": [
                         {
@@ -1066,7 +1066,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:28.141Z",
+                      "startTime": "2026-05-05T11:54:55.561Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1092,10 +1092,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 3155,
+                      "duration": 2934,
                       "errors": [],
                       "stdout": [
                         {
@@ -1104,7 +1104,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:28.492Z",
+                      "startTime": "2026-05-05T11:54:57.104Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1143,7 +1143,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 2345,
+                      "duration": 2363,
                       "errors": [],
                       "stdout": [
                         {
@@ -1152,7 +1152,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:30.383Z",
+                      "startTime": "2026-05-05T11:54:58.993Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1188,15 +1188,15 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5839,
+                      "duration": 8250,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:46.548Z",
+                      "startTime": "2026-05-05T11:55:07.268Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1222,10 +1222,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 1,
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7698,
+                      "duration": 8411,
                       "errors": [],
                       "stdout": [
                         {
@@ -1234,7 +1234,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:49.808Z",
+                      "startTime": "2026-05-05T11:55:09.659Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1263,7 +1263,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 5012,
+                      "duration": 4974,
                       "errors": [],
                       "stdout": [
                         {
@@ -1272,7 +1272,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:49.826Z",
+                      "startTime": "2026-05-05T11:55:10.346Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1299,9 +1299,9 @@
                   "results": [
                     {
                       "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 7451,
+                      "duration": 7991,
                       "errors": [],
                       "stdout": [
                         {
@@ -1310,7 +1310,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:49.845Z",
+                      "startTime": "2026-05-05T11:55:10.406Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1346,10 +1346,10 @@
                   "projectName": "mobile-safari",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
+                      "workerIndex": 4,
+                      "parallelIndex": 2,
                       "status": "skipped",
-                      "duration": 5568,
+                      "duration": 4522,
                       "errors": [],
                       "stdout": [
                         {
@@ -1358,7 +1358,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:52.449Z",
+                      "startTime": "2026-05-05T11:55:15.399Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1429,7 +1429,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "startTime": "2026-05-05T11:54:59.185Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1483,7 +1483,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "startTime": "2026-05-05T11:54:59.185Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1537,7 +1537,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "startTime": "2026-05-05T11:54:59.185Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1591,7 +1591,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "startTime": "2026-05-05T11:54:59.185Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1645,7 +1645,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:30.554Z",
+                      "startTime": "2026-05-05T11:54:59.185Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1699,7 +1699,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:54.884Z",
+                      "startTime": "2026-05-05T11:55:15.583Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1753,7 +1753,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "startTime": "2026-05-05T11:55:15.583Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1807,7 +1807,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "startTime": "2026-05-05T11:55:15.584Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1861,7 +1861,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "startTime": "2026-05-05T11:55:15.584Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1915,7 +1915,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T11:47:54.885Z",
+                      "startTime": "2026-05-05T11:55:15.584Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1945,8 +1945,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-05T11:47:19.849Z",
-    "duration": 38735.395,
+    "startTime": "2026-05-05T11:54:48.968Z",
+    "duration": 31144.043,
     "expected": 25,
     "skipped": 13,
     "unexpected": 0,
