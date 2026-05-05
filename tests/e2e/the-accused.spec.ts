@@ -20,6 +20,9 @@
 import { test, expect } from '@playwright/test'
 import { percySnapshot } from '@percy/playwright'
 
+// The Accused runs locally only — skip in CI (no local server available)
+test.skip(!!process.env.CI, 'The Accused server is local-only, skipped in CI')
+
 const BASE_URL = process.env.THE_ACCUSED_URL || 'http://localhost:3001'
 
 /* ── localStorage helpers ────────────────────────────────────────────────── */

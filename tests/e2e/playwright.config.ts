@@ -54,10 +54,10 @@ export default defineConfig({
     },
   ],
 
-  /* Dev servers — started automatically if not already running */
-  webServer: [
+  /* Dev servers — started automatically if not already running.
+     Skipped in CI: The Accused runs locally only (Windows path dependency). */
+  webServer: process.env.CI ? [] : [
     {
-      // The Accused — absolute path avoids CWD ambiguity with the config file location
       command: `node "${path.join(ROOT, 'scripts/start-the-accused.js')}"`,
       url:     'http://localhost:3001',
       reuseExistingServer: true,
