@@ -85,7 +85,7 @@ export class FidelityPage extends BasePage {
    */
   async getApiBalance(email: string): Promise<number> {
     const res  = await this.request.get(`${BASE_URL}/api/balance`, { params: { email } })
-    const body = await res.json() as BalanceResponse
+    const body = await res.json().catch(() => ({})) as BalanceResponse
     return body.points ?? 0
   }
 
