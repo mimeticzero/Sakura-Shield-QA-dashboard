@@ -2,7 +2,7 @@
   {
     "app": "sakura-rewards",
     "url": "https://sakurarewards.com/play/test-token-uuid-placeholder",
-    "scanAt": "2026-05-06T09:25:10.242Z",
+    "scanAt": "2026-05-06T09:49:57.045Z",
     "critical": 0,
     "serious": 2,
     "moderate": 3,
@@ -43,7 +43,7 @@
   {
     "app": "sakura-fidelity",
     "url": "https://sakurafidelity.com/login",
-    "scanAt": "2026-05-06T09:25:10.417Z",
+    "scanAt": "2026-05-06T09:49:57.496Z",
     "critical": 1,
     "serious": 0,
     "moderate": 3,
@@ -78,18 +78,11 @@
   {
     "app": "sakura-xian",
     "url": "https://sakuraxian.com",
-    "scanAt": "2026-05-06T09:25:19.508Z",
+    "scanAt": "2026-05-06T09:50:02.948Z",
     "critical": 0,
-    "serious": 1,
+    "serious": 0,
     "moderate": 0,
     "minor": 0,
-    "violations": [
-      {
-        "id": "color-contrast",
-        "impact": "serious",
-        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-        "nodes": 8
-      }
-    ]
+    "violations": []
   }
 ]
