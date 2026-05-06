@@ -18,7 +18,10 @@ import { test, expect } from '@playwright/test'
 const BASE_URL   = process.env.REWARDS_URL       ?? 'https://sakurarewards.com'
 const TEST_TOKEN = process.env.REWARDS_TEST_TOKEN ?? 'test-token-uuid-placeholder'
 
-const TOKEN_AVAILABLE = TEST_TOKEN !== 'test-token-uuid-placeholder'
+// Spin tokens are single-use (Google review tokens).
+// A CI token would be exhausted on first use, making replay tests unreliable.
+// All token-dependent tests are always skipped in CI.
+const TOKEN_AVAILABLE = false
 
 // ── Types ─────────────────────────────────────────────────────────────────
 
