@@ -1,43 +1,8 @@
 [
   {
-    "app": "sakura-fidelity",
-    "url": "https://sakurafidelity.com/login",
-    "scanAt": "2026-05-05T18:48:16.593Z",
-    "critical": 1,
-    "serious": 0,
-    "moderate": 3,
-    "minor": 0,
-    "violations": [
-      {
-        "id": "button-name",
-        "impact": "critical",
-        "description": "Ensure buttons have discernible text",
-        "nodes": 1
-      },
-      {
-        "id": "landmark-one-main",
-        "impact": "moderate",
-        "description": "Ensure the document has a main landmark",
-        "nodes": 1
-      },
-      {
-        "id": "page-has-heading-one",
-        "impact": "moderate",
-        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
-        "nodes": 1
-      },
-      {
-        "id": "region",
-        "impact": "moderate",
-        "description": "Ensure all page content is contained by landmarks",
-        "nodes": 6
-      }
-    ]
-  },
-  {
     "app": "sakura-rewards",
     "url": "https://sakurarewards.com/play/test-token-uuid-placeholder",
-    "scanAt": "2026-05-05T18:47:57.119Z",
+    "scanAt": "2026-05-06T09:25:10.242Z",
     "critical": 0,
     "serious": 2,
     "moderate": 3,
@@ -76,13 +41,55 @@
     ]
   },
   {
+    "app": "sakura-fidelity",
+    "url": "https://sakurafidelity.com/login",
+    "scanAt": "2026-05-06T09:25:10.417Z",
+    "critical": 1,
+    "serious": 0,
+    "moderate": 3,
+    "minor": 0,
+    "violations": [
+      {
+        "id": "button-name",
+        "impact": "critical",
+        "description": "Ensure buttons have discernible text",
+        "nodes": 1
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "nodes": 1
+      },
+      {
+        "id": "page-has-heading-one",
+        "impact": "moderate",
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "nodes": 6
+      }
+    ]
+  },
+  {
     "app": "sakura-xian",
     "url": "https://sakuraxian.com",
-    "scanAt": "2026-05-05T18:47:58.660Z",
+    "scanAt": "2026-05-06T09:25:19.508Z",
     "critical": 0,
-    "serious": 0,
+    "serious": 1,
     "moderate": 0,
     "minor": 0,
-    "violations": []
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": 8
+      }
+    ]
   }
 ]
